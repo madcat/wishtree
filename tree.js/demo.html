@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>GroupM Demo</title>
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="raphael-min.js"></script>
+        <script type="text/javascript" src="myscript.js"></script>
+        <style type="text/css">
+            body {margin:0;padding:0;}
+            #canvas_container {
+                position: absolute;
+                width: 1024px;
+                height: 768px;
+	        z-index:99;
+            }
+	    #photo {
+	        position: absolute;
+	    }
+	    #bg img {
+	    position:absolute;
+	    top:0;
+	    left:0;
+	    z-index:8;
+	    opacity:0.0;
+	    }
+
+	    #bg IMG.active {
+	    z-index:10;
+	    opacity:1.0;
+	    }
+
+	    #bg IMG.last-active {
+	    z-index:9;
+	    }
+        </style>
+    </head>
+    <body>
+<div id="bg">
+        <img class="active" src="t1.jpg" width="1024" height="768" />
+        <img src="t2.jpg" width="1024" height="768" />
+        <img src="t3.jpg" width="1024" height="768" />
+        <img src="t4.jpg" width="1024" height="768" />
+        <img src="t5.jpg" width="1024" height="768" />
+        <img id="t6" src="t6.jpg" width="1024" height="768" />
+</div>    
+        <div id="canvas_container"></div>  
+        <img id="card1" src="c1.png" width="246" height="168" />
+        <img id="card2" src="c2.png" width="220" height="156" />
+</body>
+</html>
