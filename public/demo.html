@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>GroupM Demo</title>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/raphael-min.js"></script>
+        <script type="text/javascript" src="js/test1.js"></script>
+        <script type="text/javascript" src="js/json2.js"></script>
+        <script type="text/javascript" src="js/underscore-min.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <style type="text/css">
+            body {margin:0;padding:0;}
+            #canvas_container {
+                position: absolute;
+                width: 1024px;
+                height: 768px;
+                z-index: 99;
+            }
+            #text_canvas {
+                display: none;
+            }
+            #photo {
+    	        position: absolute;
+    	    }
+    	    #bg img {
+        	    position:absolute;
+        	    top:0;
+        	    left:0;
+        	    z-index:8;
+        	    opacity:0.0;
+    	    }
+
+    	    #bg IMG.active {
+        	    z-index:10;
+        	    opacity:1.0;
+    	    }
+
+    	    #bg IMG.last-active {
+    	       z-index:9;
+    	    }
+        </style>
+    </head>
+    <body>
+        <div id="bg">
+            <img class="active" src="img/t01.jpg" width="1024" height="768" />
+            <img src="img/t02.jpg" width="1024" height="768" />
+            <img src="img/t03.jpg" width="1024" height="768" />
+            <img src="img/t04.jpg" width="1024" height="768" />
+            <img src="img/t05.jpg" width="1024" height="768" />
+            <img src="img/t06.jpg" width="1024" height="768" />
+            <img src="img/t07.jpg" width="1024" height="768" />
+            <img src="img/t08.jpg" width="1024" height="768" />
+        </div>    
+        <div id="canvas_container"></div>
+        <canvas id="text_canvas" width="160" height="105"></canvas>
+</body>
+</html>

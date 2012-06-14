@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery-ui.js"></script>
+	<script type="text/javascript" src="bg.js"></script>
+	<style type="text/css">
+            body {margin:0;padding:0;}
+            #mycanvas {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 1024px;
+                height: 768px;
+	        z-index:98;
+            }
+	    .asset {
+                position: absolute;
+                left: 280;
+                top: 200;
+	        opacity:0;
+	        image-rendering: optimizeQuality;
+                z-index: 99;
+	    }
+	    #bg img {
+	    position:absolute;
+	    top:0;
+	    left:0;
+	    z-index:8;
+	    opacity:0.0;
+	    }
+
+	    #bg IMG.active {
+	    z-index:10;
+	    opacity:1.0;
+	    }
+
+	    #bg IMG.last-active {
+	    z-index:9;
+	    }
+        </style>
+    </head>
+    <body> 
+<div id="bg">
+        <img class="active" src="t1.jpg" width="1024" height="768" />
+        <img src="t2.jpg" width="1024" height="768" />
+        <img src="t3.jpg" width="1024" height="768" />
+        <img src="t4.jpg" width="1024" height="768" />
+        <img src="t5.jpg" width="1024" height="768" />
+        <img id="t6" src="t6.jpg" width="1024" height="768" />
+</div>  
+      <canvas id="mycanvas" height="768" width="1024"></canvas>
+      <img id="card1" class="asset" src="c1.png" width="510" height="329" />
+      <img id="card2" class="asset" src="c2.png" width="510" height="329" />
+      <img id="card3" class="asset" src="c3.png" width="510" height="329" />
+        <script type="text/javascript">
+          var interval;
+	  document.getElementById("card3").onload = function(){
+	     setTimeout(function(){ // wait 2s
+	         interval = setInterval( "randomCard()", 100);
+	         setTimeout(function(){
+	          clearInterval(interval);
+	          winningCard(); 
+	         }, 5000);
+             }, 2000);
+	  }
+
+	  function winningCard() {
+	    var imgId = "#card" +  Math.floor(Math.random() * 3 + 1);
+            $(imgId).css({opacity: 1.0, left: 250, top: 175});
+            $("#mycanvas").animate({opacity: 0.5}, 500);
+            $(imgId).effect("shake", { times:3}, 50);
+	  }
+
+	  function randomCard() {
+	    var c=document.getElementById("mycanvas");
+	    var ctx=c.getContext("2d");
+
+	    var imgId = "card" +  Math.floor(Math.random() * 3 + 1);
+	    var x = 200 + Math.floor(Math.random() * 400);
+	    var y = 50 + Math.floor(Math.random() * 300);
+	    var s = 0.35 + Math.random() * 0.3;
+
+	    var img = new Image();
+	    img.onload = function() {
+	    	ctx.drawImage(img,0,0,510,329,x,y,510*s,329*s);
+	    }
+	    img.src = document.getElementById(imgId).src;
+	  }
+	</script>
+</body>
+</html>

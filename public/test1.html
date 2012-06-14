@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <title>GroupM Demo</title>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/raphael-min.js"></script>
+        <style type="text/css">
+            body {margin:0;padding:0;}
+            #canvas_container {
+                position: absolute;
+                width: 1024px;
+                height: 768px;
+                z-index: 99;
+            }
+        </style>
+    </head>
+    <body> 
+        <div id="canvas_container"></div>
+        <canvas id="text_canvas" width="140" height="105"></canvas>
+        <script>
+        	var canvas = $("#canvas_container");
+			var paper = Raphael(canvas.attr('id'),canvas.width(),canvas.height());
+			paper.image("img/t01.jpg",0,0,1024,768);
+			// 1,yellow
+			paper.path("M465 310V185H400A20 20 0 1 1 420 165V205H330").attr({stroke: "#ff0",'stroke-width':5});
+			// 2,blue
+			paper.path("M510 285V165H570A20 20 0 1 1 550 185V145H650").attr({stroke: "#00f",'stroke-width':5});
+			// 3, white
+			paper.path("M420 480H350A20 20 0 1 0 370 500V450H200V430").attr({stroke: "#eee",'stroke-width':5});
+			// 4, green
+			paper.path("M535 430V345A20 20 0 1 0 515 365H555V315H640").attr({stroke: "#0f0",'stroke-width':5});
+			// 5, red
+			paper.path("M440 335V390H385V425A20 20 0 1 0 405 405H300").attr({stroke: "#f00",'stroke-width':5});
+			// 6, green
+			paper.path("M605 355V455H660V490A20 20 0 1 1 640 470H720").attr({stroke: "#0f0",'stroke-width':5});
+
+            // function wrapText(context, text, x, y, maxWidth, lineHeight, isChinese) {
+            //     var words;
+            //     if (isChinese) {
+            //         context.font = "16pt STHeiti";
+            //         words = text;
+            //         gap = "";
+            //     } else {
+            //         context.font = "14pt Arial";
+            //         words = text.split(" ");
+            //         gap = " ";
+            //     }
+            //     var line = "";
+
+            //     for(var n = 0; n < words.length; n++) {
+
+            //         var testLine = line + words[n] + gap;
+            //         var metrics = context.measureText(testLine);
+            //         var testWidth = metrics.width;
+            //         if(testWidth > maxWidth) {
+            //             context.fillText(line, x, y);
+            //             line = words[n] + gap;
+            //             y += lineHeight;
+            //         }
+            //         else {
+            //             line = testLine;
+            //         }
+            //     }
+            //     context.fillText(line, x, y);
+            // }
+
+            // var text1 = 'wen bo jie';
+            // var text2 = '复合弓对次都讹册rwxycwfgfdd大雨如';
+            // var c = $("#text_canvas")[0];
+            // var context = c.getContext('2d');
+            // context.clearRect(0,0,c.width,c.height);
+            // context.font = "16pt Microsoft Yahei";
+            // context.textAlign = "left";
+            // context.textBaseline = "top";
+            // context.fillText('jie wenbo',0,0);
+            // var re = /.*[\u4e00-\u9fa5]+.*/;
+            // if (re.test(text2)) {
+            //     wrapText(context,text2,0,30,140,20,true);
+            // } else {
+            //     wrapText(context,text2,0,30,140,20,false);
+            // }
+        </script>
+	</body>
+</html>
