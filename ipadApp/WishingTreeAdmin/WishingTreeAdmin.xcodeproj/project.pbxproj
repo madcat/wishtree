@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2922D9BD1589D73E00A5B0C9 /* DrawService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2922D9BC1589D73E00A5B0C9 /* DrawService.m */; };
+		2922D9DA1589E67000A5B0C9 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2922D9C51589E67000A5B0C9 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2922D9DB1589E67000A5B0C9 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2922D9C81589E67000A5B0C9 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2922D9DC1589E67000A5B0C9 /* ASIDataDecompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2922D9CA1589E67000A5B0C9 /* ASIDataDecompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2922D9DD1589E67000A5B0C9 /* ASIDownloadCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 2922D9CC1589E67000A5B0C9 /* ASIDownloadCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2922D9DE1589E67000A5B0C9 /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2922D9CE1589E67000A5B0C9 /* ASIFormDataRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2922D9DF1589E67000A5B0C9 /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2922D9D01589E67000A5B0C9 /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2922D9E01589E67000A5B0C9 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 2922D9D41589E67000A5B0C9 /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2922D9E11589E67000A5B0C9 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2922D9D61589E67000A5B0C9 /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2922D9E21589E67000A5B0C9 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2922D9D91589E67000A5B0C9 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		2922D9E41589E75E00A5B0C9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2922D9E31589E75E00A5B0C9 /* libz.dylib */; };
+		2922D9E61589E76F00A5B0C9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2922D9E51589E76F00A5B0C9 /* MobileCoreServices.framework */; };
+		2922D9E81589E77A00A5B0C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2922D9E71589E77A00A5B0C9 /* SystemConfiguration.framework */; };
+		2922D9EA1589E78500A5B0C9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2922D9E91589E78500A5B0C9 /* CFNetwork.framework */; };
+		2922D9F71589FBD700A5B0C9 /* ipad1bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 2922D9F61589FBD700A5B0C9 /* ipad1bg.png */; };
+		293D6A79158B39B100B459E1 /* ipadnormalbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 293D6A78158B39B100B459E1 /* ipadnormalbg.png */; };
+		29575B751588344800B9F15F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29575B741588344800B9F15F /* UIKit.framework */; };
+		29575B771588344800B9F15F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29575B761588344800B9F15F /* Foundation.framework */; };
+		29575B791588344800B9F15F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29575B781588344800B9F15F /* CoreGraphics.framework */; };
+		29575B7F1588344800B9F15F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29575B7D1588344800B9F15F /* InfoPlist.strings */; };
+		29575B811588344800B9F15F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29575B801588344800B9F15F /* main.m */; };
+		29575B851588344800B9F15F /* WishingTreeAdminAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29575B841588344800B9F15F /* WishingTreeAdminAppDelegate.m */; };
+		29575B881588344800B9F15F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29575B861588344800B9F15F /* MainStoryboard.storyboard */; };
+		29575B8B1588344800B9F15F /* WishingTreeAdminViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29575B8A1588344800B9F15F /* WishingTreeAdminViewController.m */; };
+		29575B9B15883CAE00B9F15F /* LuckyDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29575B9A15883CAE00B9F15F /* LuckyDrawViewController.m */; };
+		29575BA31588413800B9F15F /* Wish.m in Sources */ = {isa = PBXBuildFile; fileRef = 29575BA21588413800B9F15F /* Wish.m */; };
+		29575BA61588440F00B9F15F /* DrawResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29575BA51588440F00B9F15F /* DrawResultViewController.m */; };
+		29575BAA1588489C00B9F15F /* WishesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 29575BA91588489C00B9F15F /* WishesService.m */; };
+		29575BAD1588503500B9F15F /* WishDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29575BAC1588503500B9F15F /* WishDetailViewController.m */; };
+		29575BB815889FD700B9F15F /* WishListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29575BB715889FD600B9F15F /* WishListViewController.m */; };
+		29809872158C574900009524 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29809871158C574900009524 /* Settings.bundle */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2922D9BB1589D73E00A5B0C9 /* DrawService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawService.h; path = Service/DrawService.h; sourceTree = "<group>"; };
+		2922D9BC1589D73E00A5B0C9 /* DrawService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DrawService.m; path = Service/DrawService.m; sourceTree = "<group>"; };
+		2922D9C41589E67000A5B0C9 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = WishingTreeAdmin/ASIHTTPRequest/ASIAuthenticationDialog.h; sourceTree = "<group>"; };
+		2922D9C51589E67000A5B0C9 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIAuthenticationDialog.m; path = WishingTreeAdmin/ASIHTTPRequest/ASIAuthenticationDialog.m; sourceTree = "<group>"; };
+		2922D9C61589E67000A5B0C9 /* ASICacheDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASICacheDelegate.h; path = WishingTreeAdmin/ASIHTTPRequest/ASICacheDelegate.h; sourceTree = "<group>"; };
+		2922D9C71589E67000A5B0C9 /* ASIDataCompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDataCompressor.h; path = WishingTreeAdmin/ASIHTTPRequest/ASIDataCompressor.h; sourceTree = "<group>"; };
+		2922D9C81589E67000A5B0C9 /* ASIDataCompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDataCompressor.m; path = WishingTreeAdmin/ASIHTTPRequest/ASIDataCompressor.m; sourceTree = "<group>"; };
+		2922D9C91589E67000A5B0C9 /* ASIDataDecompressor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDataDecompressor.h; path = WishingTreeAdmin/ASIHTTPRequest/ASIDataDecompressor.h; sourceTree = "<group>"; };
+		2922D9CA1589E67000A5B0C9 /* ASIDataDecompressor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDataDecompressor.m; path = WishingTreeAdmin/ASIHTTPRequest/ASIDataDecompressor.m; sourceTree = "<group>"; };
+		2922D9CB1589E67000A5B0C9 /* ASIDownloadCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIDownloadCache.h; path = WishingTreeAdmin/ASIHTTPRequest/ASIDownloadCache.h; sourceTree = "<group>"; };
+		2922D9CC1589E67000A5B0C9 /* ASIDownloadCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIDownloadCache.m; path = WishingTreeAdmin/ASIHTTPRequest/ASIDownloadCache.m; sourceTree = "<group>"; };
+		2922D9CD1589E67000A5B0C9 /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIFormDataRequest.h; path = WishingTreeAdmin/ASIHTTPRequest/ASIFormDataRequest.h; sourceTree = "<group>"; };
+		2922D9CE1589E67000A5B0C9 /* ASIFormDataRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIFormDataRequest.m; path = WishingTreeAdmin/ASIHTTPRequest/ASIFormDataRequest.m; sourceTree = "<group>"; };
+		2922D9CF1589E67000A5B0C9 /* ASIHTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequest.h; path = WishingTreeAdmin/ASIHTTPRequest/ASIHTTPRequest.h; sourceTree = "<group>"; };
+		2922D9D01589E67000A5B0C9 /* ASIHTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIHTTPRequest.m; path = WishingTreeAdmin/ASIHTTPRequest/ASIHTTPRequest.m; sourceTree = "<group>"; };
+		2922D9D11589E67000A5B0C9 /* ASIHTTPRequestConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequestConfig.h; path = WishingTreeAdmin/ASIHTTPRequest/ASIHTTPRequestConfig.h; sourceTree = "<group>"; };
+		2922D9D21589E67000A5B0C9 /* ASIHTTPRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIHTTPRequestDelegate.h; path = WishingTreeAdmin/ASIHTTPRequest/ASIHTTPRequestDelegate.h; sourceTree = "<group>"; };
+		2922D9D31589E67000A5B0C9 /* ASIInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIInputStream.h; path = WishingTreeAdmin/ASIHTTPRequest/ASIInputStream.h; sourceTree = "<group>"; };
+		2922D9D41589E67000A5B0C9 /* ASIInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASIInputStream.m; path = WishingTreeAdmin/ASIHTTPRequest/ASIInputStream.m; sourceTree = "<group>"; };
+		2922D9D51589E67000A5B0C9 /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASINetworkQueue.h; path = WishingTreeAdmin/ASIHTTPRequest/ASINetworkQueue.h; sourceTree = "<group>"; };
+		2922D9D61589E67000A5B0C9 /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASINetworkQueue.m; path = WishingTreeAdmin/ASIHTTPRequest/ASINetworkQueue.m; sourceTree = "<group>"; };
+		2922D9D71589E67000A5B0C9 /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIProgressDelegate.h; path = WishingTreeAdmin/ASIHTTPRequest/ASIProgressDelegate.h; sourceTree = "<group>"; };
+		2922D9D81589E67000A5B0C9 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = WishingTreeAdmin/ASIHTTPRequest/Reachability.h; sourceTree = "<group>"; };
+		2922D9D91589E67000A5B0C9 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = WishingTreeAdmin/ASIHTTPRequest/Reachability.m; sourceTree = "<group>"; };
+		2922D9E31589E75E00A5B0C9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		2922D9E51589E76F00A5B0C9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		2922D9E71589E77A00A5B0C9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2922D9E91589E78500A5B0C9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		2922D9F61589FBD700A5B0C9 /* ipad1bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ipad1bg.png; path = Pic/ipad1bg.png; sourceTree = "<group>"; };
+		293D6A78158B39B100B459E1 /* ipadnormalbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ipadnormalbg.png; path = Pic/ipadnormalbg.png; sourceTree = "<group>"; };
+		29575B701588344800B9F15F /* WishingTreeAdmin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WishingTreeAdmin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		29575B741588344800B9F15F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		29575B761588344800B9F15F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		29575B781588344800B9F15F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		29575B7C1588344800B9F15F /* WishingTreeAdmin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WishingTreeAdmin-Info.plist"; sourceTree = "<group>"; };
+		29575B7E1588344800B9F15F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		29575B801588344800B9F15F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		29575B821588344800B9F15F /* WishingTreeAdmin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WishingTreeAdmin-Prefix.pch"; sourceTree = "<group>"; };
+		29575B831588344800B9F15F /* WishingTreeAdminAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WishingTreeAdminAppDelegate.h; sourceTree = "<group>"; };
+		29575B841588344800B9F15F /* WishingTreeAdminAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WishingTreeAdminAppDelegate.m; sourceTree = "<group>"; };
+		29575B871588344800B9F15F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		29575B891588344800B9F15F /* WishingTreeAdminViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WishingTreeAdminViewController.h; sourceTree = "<group>"; };
+		29575B8A1588344800B9F15F /* WishingTreeAdminViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WishingTreeAdminViewController.m; sourceTree = "<group>"; };
+		29575B9915883CAE00B9F15F /* LuckyDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LuckyDrawViewController.h; path = ViewController/LuckyDrawViewController.h; sourceTree = "<group>"; };
+		29575B9A15883CAE00B9F15F /* LuckyDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LuckyDrawViewController.m; path = ViewController/LuckyDrawViewController.m; sourceTree = "<group>"; };
+		29575BA11588413800B9F15F /* Wish.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Wish.h; path = Model/Wish.h; sourceTree = "<group>"; };
+		29575BA21588413800B9F15F /* Wish.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Wish.m; path = Model/Wish.m; sourceTree = "<group>"; };
+		29575BA41588440F00B9F15F /* DrawResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawResultViewController.h; path = ViewController/DrawResultViewController.h; sourceTree = "<group>"; };
+		29575BA51588440F00B9F15F /* DrawResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DrawResultViewController.m; path = ViewController/DrawResultViewController.m; sourceTree = "<group>"; };
+		29575BA81588489C00B9F15F /* WishesService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WishesService.h; path = Service/WishesService.h; sourceTree = "<group>"; };
+		29575BA91588489C00B9F15F /* WishesService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WishesService.m; path = Service/WishesService.m; sourceTree = "<group>"; };
+		29575BAB1588503500B9F15F /* WishDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WishDetailViewController.h; path = ViewController/WishDetailViewController.h; sourceTree = "<group>"; };
+		29575BAC1588503500B9F15F /* WishDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WishDetailViewController.m; path = ViewController/WishDetailViewController.m; sourceTree = "<group>"; };
+		29575BB615889FD600B9F15F /* WishListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WishListViewController.h; path = ViewController/WishListViewController.h; sourceTree = "<group>"; };
+		29575BB715889FD600B9F15F /* WishListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WishListViewController.m; path = ViewController/WishListViewController.m; sourceTree = "<group>"; };
+		29809871158C574900009524 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		29575B6D1588344800B9F15F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2922D9EA1589E78500A5B0C9 /* CFNetwork.framework in Frameworks */,
+				2922D9E81589E77A00A5B0C9 /* SystemConfiguration.framework in Frameworks */,
+				2922D9E61589E76F00A5B0C9 /* MobileCoreServices.framework in Frameworks */,
+				2922D9E41589E75E00A5B0C9 /* libz.dylib in Frameworks */,
+				29575B751588344800B9F15F /* UIKit.framework in Frameworks */,
+				29575B771588344800B9F15F /* Foundation.framework in Frameworks */,
+				29575B791588344800B9F15F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2922D9C31589E64D00A5B0C9 /* ASIHTTPRequest */ = {
+			isa = PBXGroup;
+			children = (
+				2922D9C41589E67000A5B0C9 /* ASIAuthenticationDialog.h */,
+				2922D9C51589E67000A5B0C9 /* ASIAuthenticationDialog.m */,
+				2922D9C61589E67000A5B0C9 /* ASICacheDelegate.h */,
+				2922D9C71589E67000A5B0C9 /* ASIDataCompressor.h */,
+				2922D9C81589E67000A5B0C9 /* ASIDataCompressor.m */,
+				2922D9C91589E67000A5B0C9 /* ASIDataDecompressor.h */,
+				2922D9CA1589E67000A5B0C9 /* ASIDataDecompressor.m */,
+				2922D9CB1589E67000A5B0C9 /* ASIDownloadCache.h */,
+				2922D9CC1589E67000A5B0C9 /* ASIDownloadCache.m */,
+				2922D9CD1589E67000A5B0C9 /* ASIFormDataRequest.h */,
+				2922D9CE1589E67000A5B0C9 /* ASIFormDataRequest.m */,
+				2922D9CF1589E67000A5B0C9 /* ASIHTTPRequest.h */,
+				2922D9D01589E67000A5B0C9 /* ASIHTTPRequest.m */,
+				2922D9D11589E67000A5B0C9 /* ASIHTTPRequestConfig.h */,
+				2922D9D21589E67000A5B0C9 /* ASIHTTPRequestDelegate.h */,
+				2922D9D31589E67000A5B0C9 /* ASIInputStream.h */,
+				2922D9D41589E67000A5B0C9 /* ASIInputStream.m */,
+				2922D9D51589E67000A5B0C9 /* ASINetworkQueue.h */,
+				2922D9D61589E67000A5B0C9 /* ASINetworkQueue.m */,
+				2922D9D71589E67000A5B0C9 /* ASIProgressDelegate.h */,
+				2922D9D81589E67000A5B0C9 /* Reachability.h */,
+				2922D9D91589E67000A5B0C9 /* Reachability.m */,
+			);
+			name = ASIHTTPRequest;
+			sourceTree = "<group>";
+		};
+		2922D9F31589F81100A5B0C9 /* pic */ = {
+			isa = PBXGroup;
+			children = (
+				293D6A78158B39B100B459E1 /* ipadnormalbg.png */,
+				2922D9F61589FBD700A5B0C9 /* ipad1bg.png */,
+			);
+			name = pic;
+			sourceTree = "<group>";
+		};
+		29575B651588344800B9F15F = {
+			isa = PBXGroup;
+			children = (
+				29575B7A1588344800B9F15F /* WishingTreeAdmin */,
+				29575B731588344800B9F15F /* Frameworks */,
+				29575B711588344800B9F15F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		29575B711588344800B9F15F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29575B701588344800B9F15F /* WishingTreeAdmin.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		29575B731588344800B9F15F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2922D9E91589E78500A5B0C9 /* CFNetwork.framework */,
+				2922D9E71589E77A00A5B0C9 /* SystemConfiguration.framework */,
+				2922D9E51589E76F00A5B0C9 /* MobileCoreServices.framework */,
+				2922D9E31589E75E00A5B0C9 /* libz.dylib */,
+				2922D9C31589E64D00A5B0C9 /* ASIHTTPRequest */,
+				29575B741588344800B9F15F /* UIKit.framework */,
+				29575B761588344800B9F15F /* Foundation.framework */,
+				29575B781588344800B9F15F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		29575B7A1588344800B9F15F /* WishingTreeAdmin */ = {
+			isa = PBXGroup;
+			children = (
+				29575BA71588486100B9F15F /* Service */,
+				29575BA01588410700B9F15F /* Model */,
+				29575B911588382C00B9F15F /* ViewController */,
+				29575B831588344800B9F15F /* WishingTreeAdminAppDelegate.h */,
+				29575B841588344800B9F15F /* WishingTreeAdminAppDelegate.m */,
+				29575B861588344800B9F15F /* MainStoryboard.storyboard */,
+				29575B7B1588344800B9F15F /* Supporting Files */,
+			);
+			path = WishingTreeAdmin;
+			sourceTree = "<group>";
+		};
+		29575B7B1588344800B9F15F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2922D9F31589F81100A5B0C9 /* pic */,
+				29575B7C1588344800B9F15F /* WishingTreeAdmin-Info.plist */,
+				29575B7D1588344800B9F15F /* InfoPlist.strings */,
+				29575B801588344800B9F15F /* main.m */,
+				29575B821588344800B9F15F /* WishingTreeAdmin-Prefix.pch */,
+				29809871158C574900009524 /* Settings.bundle */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29575B911588382C00B9F15F /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29575B891588344800B9F15F /* WishingTreeAdminViewController.h */,
+				29575B8A1588344800B9F15F /* WishingTreeAdminViewController.m */,
+				29575B9915883CAE00B9F15F /* LuckyDrawViewController.h */,
+				29575B9A15883CAE00B9F15F /* LuckyDrawViewController.m */,
+				29575BA41588440F00B9F15F /* DrawResultViewController.h */,
+				29575BA51588440F00B9F15F /* DrawResultViewController.m */,
+				29575BAB1588503500B9F15F /* WishDetailViewController.h */,
+				29575BAC1588503500B9F15F /* WishDetailViewController.m */,
+				29575BB615889FD600B9F15F /* WishListViewController.h */,
+				29575BB715889FD600B9F15F /* WishListViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		29575BA01588410700B9F15F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				29575BA11588413800B9F15F /* Wish.h */,
+				29575BA21588413800B9F15F /* Wish.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		29575BA71588486100B9F15F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				29575BA81588489C00B9F15F /* WishesService.h */,
+				29575BA91588489C00B9F15F /* WishesService.m */,
+				2922D9BB1589D73E00A5B0C9 /* DrawService.h */,
+				2922D9BC1589D73E00A5B0C9 /* DrawService.m */,
+			);
+			name = Service;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		29575B6F1588344800B9F15F /* WishingTreeAdmin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 29575B8E1588344800B9F15F /* Build configuration list for PBXNativeTarget "WishingTreeAdmin" */;
+			buildPhases = (
+				29575B6C1588344800B9F15F /* Sources */,
+				29575B6D1588344800B9F15F /* Frameworks */,
+				29575B6E1588344800B9F15F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WishingTreeAdmin;
+			productName = WishingTreeAdmin;
+			productReference = 29575B701588344800B9F15F /* WishingTreeAdmin.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29575B671588344800B9F15F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = WishingTreeAdmin;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 29575B6A1588344800B9F15F /* Build configuration list for PBXProject "WishingTreeAdmin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 29575B651588344800B9F15F;
+			productRefGroup = 29575B711588344800B9F15F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				29575B6F1588344800B9F15F /* WishingTreeAdmin */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		29575B6E1588344800B9F15F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29575B7F1588344800B9F15F /* InfoPlist.strings in Resources */,
+				29575B881588344800B9F15F /* MainStoryboard.storyboard in Resources */,
+				2922D9F71589FBD700A5B0C9 /* ipad1bg.png in Resources */,
+				293D6A79158B39B100B459E1 /* ipadnormalbg.png in Resources */,
+				29809872158C574900009524 /* Settings.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		29575B6C1588344800B9F15F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29575B811588344800B9F15F /* main.m in Sources */,
+				29575B851588344800B9F15F /* WishingTreeAdminAppDelegate.m in Sources */,
+				29575B8B1588344800B9F15F /* WishingTreeAdminViewController.m in Sources */,
+				29575B9B15883CAE00B9F15F /* LuckyDrawViewController.m in Sources */,
+				29575BA31588413800B9F15F /* Wish.m in Sources */,
+				29575BA61588440F00B9F15F /* DrawResultViewController.m in Sources */,
+				29575BAA1588489C00B9F15F /* WishesService.m in Sources */,
+				29575BAD1588503500B9F15F /* WishDetailViewController.m in Sources */,
+				29575BB815889FD700B9F15F /* WishListViewController.m in Sources */,
+				2922D9BD1589D73E00A5B0C9 /* DrawService.m in Sources */,
+				2922D9DA1589E67000A5B0C9 /* ASIAuthenticationDialog.m in Sources */,
+				2922D9DB1589E67000A5B0C9 /* ASIDataCompressor.m in Sources */,
+				2922D9DC1589E67000A5B0C9 /* ASIDataDecompressor.m in Sources */,
+				2922D9DD1589E67000A5B0C9 /* ASIDownloadCache.m in Sources */,
+				2922D9DE1589E67000A5B0C9 /* ASIFormDataRequest.m in Sources */,
+				2922D9DF1589E67000A5B0C9 /* ASIHTTPRequest.m in Sources */,
+				2922D9E01589E67000A5B0C9 /* ASIInputStream.m in Sources */,
+				2922D9E11589E67000A5B0C9 /* ASINetworkQueue.m in Sources */,
+				2922D9E21589E67000A5B0C9 /* Reachability.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		29575B7D1588344800B9F15F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29575B7E1588344800B9F15F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		29575B861588344800B9F15F /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29575B871588344800B9F15F /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		29575B8C1588344800B9F15F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		29575B8D1588344800B9F15F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		29575B8F1588344800B9F15F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WishingTreeAdmin/WishingTreeAdmin-Prefix.pch";
+				INFOPLIST_FILE = "WishingTreeAdmin/WishingTreeAdmin-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		29575B901588344800B9F15F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WishingTreeAdmin/WishingTreeAdmin-Prefix.pch";
+				INFOPLIST_FILE = "WishingTreeAdmin/WishingTreeAdmin-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		29575B6A1588344800B9F15F /* Build configuration list for PBXProject "WishingTreeAdmin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29575B8C1588344800B9F15F /* Debug */,
+				29575B8D1588344800B9F15F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		29575B8E1588344800B9F15F /* Build configuration list for PBXNativeTarget "WishingTreeAdmin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29575B8F1588344800B9F15F /* Debug */,
+				29575B901588344800B9F15F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29575B671588344800B9F15F /* Project object */;
+}

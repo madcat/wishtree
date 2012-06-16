@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="1.1" toolsVersion="2182" systemVersion="11E53" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="JFK-xO-4bN">
+    <dependencies>
+        <deployment defaultVersion="1296" identifier="iOS"/>
+        <development defaultVersion="4200" identifier="xcode"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1181"/>
+    </dependencies>
+    <scenes>
+        <!--Wishing Tree User View Controller-->
+        <scene sceneID="4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3" sceneMemberID="firstResponder"/>
+                <viewController id="2" customClass="WishingTreeUserViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Owh-cY-7UF">
+                                <rect key="frame" x="490" y="677" width="130" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" size="button"/>
+                                <state key="normal" title="NEXT">
+                                    <color key="titleColor" red="0.19607843137254902" green="0.30980392156862746" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cXc-ac-zMh" kind="push" identifier="Next2Username" id="vc1-Qv-Bnz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="9XL-GC-g6Y"/>
+                    <connections>
+                        <outlet property="nextButton" destination="Owh-cY-7UF" id="QE8-E9-0mn"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="637" y="-128"/>
+        </scene>
+        <!--User Name View Controller-->
+        <scene sceneID="tyM-j1-HLm">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5r6-XD-Xsv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="cXc-ac-zMh" customClass="UserNameViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5kr-Al-dCd">
+                        <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="ipad2btn.png" id="dxo-oD-P0M">
+                                <rect key="frame" x="73" y="359" width="622" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editBegin:" destination="cXc-ac-zMh" eventType="editingChanged" id="oOJ-hh-AJp"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" background="ipad2btn.png" id="GJi-4X-bti">
+                                <rect key="frame" x="73" y="518" width="622" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="editBegin:" destination="cXc-ac-zMh" eventType="editingChanged" id="FEj-Dw-9Ya"/>
+                                </connections>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ipad2banner.png" id="HQV-lY-WcR">
+                                <rect key="frame" x="0.0" y="901" width="768" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eJW-iL-nvy">
+                                <rect key="frame" x="73" y="901" width="140" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="ipad2before.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2" kind="push" identifier="back2Intro" id="IVk-du-4q0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mi8-W0-K3a">
+                                <rect key="frame" x="555" y="901" width="140" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="ipad2next.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkValue:" destination="cXc-ac-zMh" eventType="touchUpInside" id="uxX-b2-HVG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fy8-pq-4qk">
+                                <rect key="frame" x="60" y="51" width="164" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2" kind="push" identifier="home2begin" id="B6f-DI-kkb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Kkz-9T-her"/>
+                    <connections>
+                        <outlet property="backButton" destination="eJW-iL-nvy" id="OC5-Pd-QUB"/>
+                        <outlet property="btnBanner" destination="HQV-lY-WcR" id="aTC-i3-WRG"/>
+                        <outlet property="firstname" destination="GJi-4X-bti" id="ooJ-K5-Lu5"/>
+                        <outlet property="lastname" destination="dxo-oD-P0M" id="Nzv-vF-qSI"/>
+                        <outlet property="nextButton" destination="mi8-W0-K3a" id="RHD-FN-NKf"/>
+                        <segue destination="piw-cS-vvr" kind="push" identifier="next2UserPhoto" id="QSW-1y-xO2"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1617" y="516"/>
+        </scene>
+        <!--Finishing View Controller-->
+        <scene sceneID="TEu-0P-6ET">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dhc-FH-Mj0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="4mg-Hp-J93" customClass="FinishingViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gtp-ma-kKO">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="O8R-G0-Q6U"/>
+                    <connections>
+                        <segue destination="2" kind="push" identifier="return2Main" id="pWy-PQ-ehv"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="673" y="1728"/>
+        </scene>
+        <!--User Photo View Controller-->
+        <scene sceneID="WvW-dh-UwN">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Swp-tI-2Ph" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="piw-cS-vvr" customClass="UserPhotoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JFD-Mo-7wf">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="dQd-uc-kCx">
+                                <rect key="frame" x="170" y="306" width="429" height="572"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" id="YA8-WU-jEt">
+                                <rect key="frame" x="329" y="532" width="110" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ipad2banner.png" id="88z-Cr-eql">
+                                <rect key="frame" x="0.0" y="901" width="768" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Zna-xz-WYw">
+                                <rect key="frame" x="73" y="901" width="140" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="ipad2before.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cXc-ac-zMh" kind="push" identifier="back2Username" id="qDn-Me-FmY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4KW-Cj-F0q">
+                                <rect key="frame" x="555" y="901" width="140" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="ipad2next.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="nj9-Pm-9Jg" kind="push" identifier="next2UserWish" id="RrI-EB-vlq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="h0Z-Ar-mpr">
+                                <rect key="frame" x="348" y="906" width="72" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="ipad3camera.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="touchPhoto:" destination="piw-cS-vvr" eventType="touchUpInside" id="Xdp-BX-3Kh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="U4B-lu-gNl">
+                                <rect key="frame" x="324" y="910" width="121" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Again 重拍">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="retakePhoto:" destination="piw-cS-vvr" eventType="touchUpInside" id="jZY-Jb-np2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="IPL-x3-EpI">
+                                <rect key="frame" x="60" y="51" width="164" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2" kind="push" identifier="home2begin" id="Bct-6x-bt5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="l4M-UA-pMK"/>
+                    <connections>
+                        <outlet property="nextButton" destination="4KW-Cj-F0q" id="8gM-zy-unb"/>
+                        <outlet property="photoImageView" destination="dQd-uc-kCx" id="UsK-YO-xgS"/>
+                        <outlet property="photoPick" destination="h0Z-Ar-mpr" id="fft-gC-17i"/>
+                        <outlet property="rephotoButton" destination="U4B-lu-gNl" id="BUo-OX-GBT"/>
+                        <outlet property="showTimer" destination="YA8-WU-jEt" id="L2j-dZ-Zd2"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2599" y="-128"/>
+        </scene>
+        <!--User Wish View Controller-->
+        <scene sceneID="IGC-ZV-y4i">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cns-ZC-Sx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="nj9-Pm-9Jg" customClass="UserWishViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UWQ-OM-09o">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="1" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="default" id="Uy7-F9-BOe">
+                                <rect key="frame" x="62" y="276" width="546" height="208"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.96537449048913038" green="0.96537449048913038" blue="0.96537449048913038" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" id="A6o-8Q-PRh">
+                                <rect key="frame" x="295" y="492" width="313" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ipad2banner.png" id="f66-x0-Nc1">
+                                <rect key="frame" x="0.0" y="901" width="768" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fki-ek-kx4">
+                                <rect key="frame" x="73" y="901" width="140" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="ipad2before.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="piw-cS-vvr" kind="push" identifier="back2UserPhoto" id="ywc-5d-OPK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="0bi-48-Xvt">
+                                <rect key="frame" x="555" y="901" width="140" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="ipad2next.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="checkValue:" destination="nj9-Pm-9Jg" eventType="touchUpInside" id="9Fi-Ol-7SW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="NCy-zd-KCv">
+                                <rect key="frame" x="60" y="51" width="164" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2" kind="push" id="qhZ-6C-xJg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Oqd-bO-kEd"/>
+                    <connections>
+                        <outlet property="backButton" destination="Fki-ek-kx4" id="iIc-6F-3XN"/>
+                        <outlet property="btnBanner" destination="f66-x0-Nc1" id="ta0-Ss-wrp"/>
+                        <outlet property="nextButton" destination="0bi-48-Xvt" id="Orv-0l-NMe"/>
+                        <outlet property="wishWords" destination="Uy7-F9-BOe" id="ibs-8y-zcV"/>
+                        <outlet property="wishWordsWarning" destination="A6o-8Q-PRh" id="sqY-j2-bdl"/>
+                        <segue destination="9Ty-QB-dI9" kind="push" identifier="next2UserConfirm" id="CtT-gJ-Vt6"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3584" y="516"/>
+        </scene>
+        <!--User Confirm View Controller-->
+        <scene sceneID="dgU-N1-nsf">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Mz-nM-saW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="9Ty-QB-dI9" customClass="UserConfirmViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uH6-OS-xUE">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="960"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="rxi-uL-hvD">
+                                <rect key="frame" x="272" y="739" width="216" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="ipad5confirm.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="confirm2Push:" destination="9Ty-QB-dI9" eventType="touchUpInside" id="naS-bC-e14"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="ipad2banner.png" id="MCZ-nt-Mu7">
+                                <rect key="frame" x="0.0" y="901" width="768" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="X63-58-eKF">
+                                <rect key="frame" x="73" y="901" width="140" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="ipad2before.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="nj9-Pm-9Jg" kind="push" identifier="back2UserWish" id="u2Q-TU-gJh"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="Fk6-yk-m7L">
+                                <rect key="frame" x="125" y="347" width="510" height="329"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="mNL-YB-2c0">
+                                <rect key="frame" x="140" y="385" width="190" height="253"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" id="yZi-np-sfj">
+                                <rect key="frame" x="354" y="433" width="260" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" text="default" id="vFz-LH-4b1">
+                                <rect key="frame" x="354" y="496" width="260" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HfW-LK-A4U">
+                                <rect key="frame" x="60" y="51" width="164" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2" kind="push" identifier="home2begin" id="nQP-kV-DsU"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fKl-OG-rvr"/>
+                    <connections>
+                        <outlet property="backButton" destination="X63-58-eKF" id="8Ve-Lu-sdi"/>
+                        <outlet property="cardBackground" destination="Fk6-yk-m7L" id="TWl-bE-BuE"/>
+                        <outlet property="confirmButton" destination="rxi-uL-hvD" id="sss-ZY-z9j"/>
+                        <outlet property="userPhoto" destination="mNL-YB-2c0" id="ZJ8-8n-0eY"/>
+                        <outlet property="userWishWords" destination="vFz-LH-4b1" id="fra-Mq-GGt"/>
+                        <outlet property="username" destination="yZi-np-sfj" id="E5N-K8-K2Y"/>
+                        <segue destination="4mg-Hp-J93" kind="push" identifier="endProcess" id="pOA-yM-jyx"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2599" y="1728"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="RRd-zn-Igp">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KoK-UO-NYv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="JFK-xO-4bN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="JXG-ug-wFf">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="kVS-pi-Mru"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="-297" y="-128"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ipad2banner.png" width="768" height="59"/>
+        <image name="ipad2before.png" width="149" height="27"/>
+        <image name="ipad2btn.png" width="628" height="62"/>
+        <image name="ipad2next.png" width="134" height="27"/>
+        <image name="ipad3camera.png" width="44" height="45"/>
+        <image name="ipad5confirm.png" width="270" height="55"/>
+    </resources>
+    <classes>
+        <class className="FinishingViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FinishingViewController.h"/>
+        </class>
+        <class className="UserConfirmViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserConfirmViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="confirm2Push:"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="cardBackground" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="confirmButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="userPhoto" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="userWishWords" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="username" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="UserNameViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserNameViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="checkValue:"/>
+                <relationship kind="action" name="editBegin:"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnBanner" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="firstname" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="lastname" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="UserPhotoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserPhotoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="retakePhoto:"/>
+                <relationship kind="action" name="touchPhoto:"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="photoImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="photoPick" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="rephotoButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="showTimer" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="UserWishViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UserWishViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="checkValue:"/>
+                <relationship kind="outlet" name="backButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="btnBanner" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="wishWords" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="wishWordsWarning" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="WishingTreeUserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/WishingTreeUserViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
