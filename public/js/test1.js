@@ -286,6 +286,18 @@ function get_text_img(text1,text2,color) {
 
 $(document).ready(function(){
 
+    // update database to local storage
+    $.ajax({
+        type: 'GET',
+        url: "http://localhost:3000/wishes",
+        dataType: 'json',
+        success: function(json) {
+            if (json.status == "success") {
+                store.setItem('local_wish',JSON.stringify(json.body));
+            }
+        }
+    });
+
     var canvas = $("#canvas_container");
     var paper = Raphael(canvas.attr('id'),canvas.width(),canvas.height());
 
