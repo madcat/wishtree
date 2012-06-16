@@ -124,6 +124,27 @@ app.post('/wishes',function(req,res){
   });
 });
 
+app.post('/luck/:action',function(req,res){
+  if (req.params.action == 'start') {
+    io.sockets.emit('luck_start');
+    res.json({'status': 'success', 'body': ''});
+  } else {
+    db.query("SELECT * FROM " + settings.db_table +" WHERE id = " + req.body.id,function(err,rows){
+      if (!err) {
+        if (req.params.action == "stop") {
+          io.sockets.emit('luck_stop',rows[0]);
+        } else if (req.params.action == "show") {
+          io.sockets.emit('show_wish',rows[0]);
+        }
+        res.json({'status': 'success', 'body': rows[0]});
+      } else {
+        res.json({'status': 'error','body': err.code});
+      }
+    });
+  }
+});
+
+
 // PUT => UPDATE
 
 app.put('/wishes/:id',function(req,res){
