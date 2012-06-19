@@ -37,7 +37,17 @@ var db = mysql.createConnection({
   user: settings.db_login,
   password: settings.db_pass
 });
-db.query('USE ' + settings.db_name, function(err,result){});
+db.connect(function(err){
+  if (!err) {
+    db.query('USE ' + settings.db_name, function(err,result){
+      if (err) {
+        console.log(err);
+      }
+    });
+  } else {
+    console.log(err);
+  }
+});
 
 // TEST API
 
