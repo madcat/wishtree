@@ -1,10 +1,8 @@
-
 // enum
 var WISH_TYPE = {
     INCOMING: 1,
-    LOCAL: 2,
-    SHOW: 3
-}
+    LOCAL: 2
+};
 
 // local storage
 var store = window.localStorage;
@@ -65,79 +63,86 @@ var now_play_id,
     animating_idx_arr = [],
     now_play_type = 0;
 
-var MAX_ANIMATION = 4,
-    MAX_TYPE = 6;
+var MAX_ANIMATION = 3,
+    MAX_TYPE = 6,
+    WISH_SEQ = [0,1,2,3,4,5];
 
 var path_map = {};
 
 var PARAMS = [
     {
-        path: "M465 310V185H400A20 20 0 1 1 420 165V205H330",
-        shadow: "M465 310V185H400A20 20 0 1 1 420 165V205H330",
-        orientation: 'left',
-        path_end_x: 325,
-        path_end_y: 205,
-        font_color: "#000",
-        line_color: "#ffe807",
-        bg_img: "img/yellow.png",
-        bias: "-50,0"
-    },
-    {
-        path: "M510 285V165H570A20 20 0 1 1 550 185V145H650",
-        shadow: "M510 285V165H570A20 20 0 1 1 550 185V145H650",
+        path: "M155 255V155H205A15 15 0 1 1 190 170V120H255",
+        shadow: "M155 255V155H205A15 15 0 1 1 190 170V120H255",
         orientation: 'right',
-        path_end_x: 645,
-        path_end_y: 145,
-        font_color: "#fff",
-        line_color: "#0cacdb",
-        bg_img: "img/blue.png",
-        bias: "-50,0"
-    },
-    {
-        path: "M440 335V390H385V425A20 20 0 1 0 405 405H300",
-        shadow: "M440 335V390H385V425A20 20 0 1 0 405 405H300",
-        orientation: 'left',
-        path_end_x: 295,
-        path_end_y: 405,
-        font_color: "#000",
-        line_color: "#e0002a",
-        bg_img: "img/red.png",
-        bias: "-50,0"
-    },
-    {
-        path:"M535 430V345A20 20 0 1 0 515 365H555V315H640",
-        shadow: "M535 430V345A20 20 0 1 0 515 365H555V315H640",
-        orientation: 'right',
-        path_end_x: 635,
-        path_end_y: 315,
-        font_color: "#000",
-        line_color: "#43b133",
-        bg_img: "img/green.png",
-        bias: "-50,0"
-    },
-    {
-        path: "M420 480H350A20 20 0 1 0 370 500V450H250",
-        shadow: "M420 480H350A20 20 0 1 0 370 500V450H250",
-        orientation: 'left',
-        path_end_x: 245,
-        path_end_y: 450,
+        path_end_x: 250,
+        path_end_y: 120,
         font_color: "#000",
         line_color: "#ffffff",
         bg_img: "img/white.png",
-        bias: "-50,0"
+        bias: "-50,0",
+        scale: 0.8
     },
     {
-        shadow: "M605 355V455H660V490A20 20 0 1 1 640 470H720",
-        path: "M605 355V455H660V490A20 20 0 1 1 640 470H720",
+        path: "M345 255V325H295A15 15 0 1 1 310 310V345H255",
+        shadow: "M345 255V325H295A15 15 0 1 1 310 310V345H255",
+        orientation: 'left',
+        path_end_x: 250,
+        path_end_y: 345,
+        font_color: "#000",
+        line_color: "#e0002a",
+        bg_img: "img/red.png",
+        bias: "50,0",
+        scale: 0.7
+    },
+    {
+        path: "M200 470H270V425A15 15 0 1 0 255 440H310",
+        shadow: "M200 470H270V425A15 15 0 1 0 255 440H310",
         orientation: 'right',
-        path_end_x: 715,
-        path_end_y: 470,
+        path_end_x: 305,
+        path_end_y: 440,
+        font_color: "#000",
+        line_color: "#ffe807",
+        bg_img: "img/yellow.png",
+        bias: "-50,0",
+        scale: 0.6
+    },
+    {
+        path: "M395 255V180H345A15 15 0 1 0 360 195V150H300",
+        shadow: "M395 255V180H345A15 15 0 1 0 360 195V150H300",
+        orientation: 'left',
+        path_end_x: 295,
+        path_end_y: 150,
+        font_color: "#fff",
+        line_color: "#0cacdb",
+        bg_img: "img/blue.png",
+        bias: "50,0",
+        scale: 0.8
+    },
+    {
+        path: "M180 300H240V265A15 15 0 1 0 225 280H290",
+        shadow: "M180 300H240V265A15 15 0 1 0 225 280H290",
+        orientation: 'right',
+        path_end_x: 285,
+        path_end_y: 280,
+        font_color: "#000",
+        line_color: "#ffffff",
+        bg_img: "img/white.png",
+        bias: "50,0",
+        scale: 0.7
+    },
+    {
+        path: "M325 415H250V455A15 15 0 1 0 265 440H220",
+        shadow: "M325 415H250V455A15 15 0 1 0 265 440H220",
+        orientation: 'left',
+        path_end_x: 215,
+        path_end_y: 440,
         font_color: "#000",
         line_color: "#43b133",
         bg_img: "img/green.png",
-        bias: "-50,0"
-    }           
-]
+        bias: "50,0",
+        scale: 0.6
+    }
+];
 
 // class for wish animation
 function WishAnim(paper,wish,index,wish_type) {
@@ -152,8 +157,8 @@ function WishAnim(paper,wish,index,wish_type) {
     this.shadow_anim = this.paper.path();
     this.path_anim = this.paper.path();
 
-    // random scale from 0.7 to 1.0
-    this.scale = Math.ceil(6 + Math.random() * 4) / 10;
+    // random scale from 0.6 to 0.8
+    this.scale = this.param.scale;//Math.ceil(5 + Math.random() * 3) / 10;
     var real_w = Math.floor(CARD_W * this.scale); 
         real_h = Math.floor(CARD_H * this.scale);
     if (this.param.orientation == 'left') {
@@ -214,11 +219,11 @@ WishAnim.prototype.animate_wish = function() {
     // animations
     this.path_anim.animate(attr_obj3,4e3, "backIn");
     this.shadow_anim.animate(attr_obj4,4e3, "backIn",function(){
-       self.card.animate({transform: 's' + self.scale + ',' + self.scale + ','  + self.card_x + ',' + self.card_y + 't0,0', opacity:1},500,"backOut"); 
+       self.card.animate({transform: 's' + self.scale + ',' + self.scale + ','  + self.card_x + ',' + self.card_y + 't0,0', opacity:1},2e3,"backOut"); 
     });
     setTimeout(function(){
         animating_idx_arr.shift();
-        self.card.animate({transform: 's' + self.scale + ',' + self.scale + ','  + self.card_x + ',' + self.card_y + 't' + self.param.bias, opacity:0},500,"backIn",function(){
+        self.card.animate({transform: 's' + self.scale + ',' + self.scale + ','  + self.card_x + ',' + self.card_y + 't' + self.param.bias, opacity:0},2e3,"backIn",function(){
             self.path_anim.animate(attr_obj1,4e3, "backOut");
             self.shadow_anim.animate(attr_obj2,4e3, "backOut",function(){
                 change_attr("local_wish",self.wish,"is_animate",false);
@@ -318,7 +323,7 @@ $(document).ready(function(){
     });
 
     // background animation
-    var width = canvas.width(), height = canvas.height();
+    var width = 1024, height = canvas.height();
 
     var grid = [
         0,2,0,1,3,4,3,1,0,2,3,1,1,4,3,2,1,2,3,2,1,3,2,1,4,0,0,2,2,4,4,2,
@@ -470,8 +475,8 @@ $(document).ready(function(){
                 setTimeout(render_wish,1000);
                 return;
             }
-            var idx = now_play_type % MAX_TYPE;
-            now_play_type = (now_play_type + 1) % MAX_TYPE;
+            var idx = WISH_SEQ[now_play_type % WISH_SEQ.length];
+            now_play_type = now_play_type + 1;
             var anim = new WishAnim(paper,wish,idx,type);
             anim.animate_wish();
         }

@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>Admin</title>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="js/knockout-2.1.0rc2.js"></script>
+    <script type="text/javascript" src="js/underscore-min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css"> 
+    <style type="text/css">
+        body {
+            margin:0;
+            padding:0;
+        }
+        #wishes {
+            width: 900px;
+            margin: auto;
+        }
+        .table th, .table td {
+            text-align: center;
+        }
+        .photo img {
+            width: 100px;
+        }
+    </style>
+    <script type="text/javascript">
+        // wish modal
+        function GM_Wish(wish) {
+            // reserved 'this'
+            var self = this;
+            // observables in db
+            self.id = ko.observable(wish.id);
+            self.first_name = ko.observable(wish.first_name);
+            self.last_name = ko.observable(wish.last_name);
+            self.pic_path = ko.observable(wish.pic_path);
+            self.wish_text = ko.observable(wish.wish_text);
+            self.is_show = ko.observable(wish.is_show == 1);
+            // additional observables
+            // functions
+            self.alter_show = function(wish){
+                var show_status = wish.is_show()? 0: 1;
+                $.ajax({
+                    url: '/wishes/' + wish.id(),
+                    type: 'PUT',
+                    dataType: 'json',
+                    data: {show: show_status},
+                    success: function(json){
+                        if (json.status == "success") {
+                            self.is_show(!self.is_show());
+                        }
+                    }
+                });
+                return false;
+            };
+            
+        }
+
+        // view modal
+        function WishListViewModal() {
+            var self = this;
+            self.wishes = ko.observableArray([]);
+
+        // load all booths from server
+        $.getJSON("/wishes",function(json){
+            if (json.status == "success") {
+                var mapped_wishes = _.map(json.body,function(wish){
+                    return new GM_Wish(wish);
+                });
+                self.wishes(mapped_wishes);
+            }
+        });
+        }
+
+        $(function(){
+            ko.applyBindings(new WishListViewModal());
+        });
+    </script>
+</head>
+<body>
+    <table id="wishes" class="table table-bordered">
+        <caption>Wish Tree</catpion>
+        <thead>
+            <th>Id</td>
+            <th>Photo</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Wish</th>
+            <th>Action</th>
+        </thead>
+        <tbody data-bind="foreach: wishes">
+            <tr>
+                <td><span data-bind="text: id"></span></td>
+                <td class="photo"><img data-bind="attr: {src: pic_path}"></img></td>
+                <td><span data-bind="text: first_name"></span></td>
+                <td><span data-bind="text: last_name"></span></td>
+                <td><span data-bind="text: wish_text"></span></td>
+                <td><span>
+                    <a class='btn btn-success' href='#' data-bind='visible: is_show() != 1, click: alter_show'>显示</a>
+                    <a class='btn btn-warning' href='#' data-bind='visible: is_show() == 1, click: alter_show'>隐藏</a>
+                </span></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <title>WishTree</title>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/raphael-min.js"></script>
+        <script type="text/javascript" src="js/out.js"></script>
+        <script type="text/javascript" src="js/json2.js"></script>
+        <script type="text/javascript" src="js/underscore-min.js"></script>
+        <script type="text/javascript" src="js/jquery.transit.min.js"></script>
+        <script type="text/javascript" src="js/requestAnimationFrame.js"></script>
+        <script src="/socket.io/socket.io.js"></script>
+        <style type="text/css">
+            body {margin:0;padding:0;}
+            #canvas_container {
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 535px;
+                height: 768px;
+                z-index: 99;
+            }
+            #text_canvas {
+                display: none;
+            }
+            #fps {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                z-index: 999;
+            }
+
+            .layer {
+                position: absolute;
+                left:0px;
+                top:0px;
+                width:1024px;
+                height:768px;
+                display:block;
+                margin-left: -240px;
+            }
+            .light {
+                position: absolute;
+                opacity: 0;
+            }
+            .fade {
+                -webkit-animation-name: fadeAnim;
+                -webkit-animation-duration: 2s;
+                -webkit-animation-timing-function: linear;
+                -webkit-animation-iteration-count: infinite;
+            }
+            @-webkit-keyframes fadeAnim {
+                0%   {opacity:0;}
+                25%  {opacity:1.0;}
+                75%   {opacity:1.0;}  
+                100%  {opacity:0;}
+            }
+            #wrapper {display:block;}
+        </style>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="grid" class="layer">
+                <img id="gridImg"/>
+            </div>
+            <div id="light" class="layer"></div>
+            <div id="tree" class="layer">
+                <img src="img/tree.png" width="1024" height="768px" />
+            </div>
+        </div>
+        <div id="canvas_container"></div>
+        <canvas id="text_canvas" width="160" height="105"></canvas>
+        <div id="fps" class="layer">FPS</div>
+</body>
+</html>

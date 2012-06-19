@@ -48,7 +48,7 @@ app.get('/', function(req, res){
 // GET => READ
 app.get('/wishes/:id?',function(req, res){
   var sql;
-  if (req.params.id) {
+  if (req.params.id != undefined) {
     sql = "SELECT * FROM " + settings.db_table + " WHERE id = " + req.params.id;
     db.query(sql,function(err,rows){
       if (!err) {
@@ -64,6 +64,7 @@ app.get('/wishes/:id?',function(req, res){
       if (!err) {
         res.json({'status': 'success', 'body': rows});
       } else {
+        console.log(sql);
         res.json({'status': 'error','body': err.code});
       }
     });
@@ -84,6 +85,33 @@ app.get('/ids',function(req,res){
         res.json({'status': 'error','body': err.code});
       }
     });
+});
+
+app.get('/show/:id?',function(req,res){
+  var sql;
+  console.log(req.params);
+  if (req.params.id == undefined) {
+    sql = "SELECT * FROM " + settings.db_table + " WHERE is_read = 1";
+    db.query(sql,function(err,rows){
+      if (!err) {
+        res.json({'status': 'success', 'body': rows});
+      } else {
+        console.log(sql);
+        res.json({'status': 'error','body': err.code});
+      }
+    });
+  } else {
+    sql = "SELECT * FROM " + settings.db_table + " WHERE is_read = 1 AND id = " + req.params.id;
+    db.query(sql,function(err,rows){
+      if (!err) {
+        io.sockets.emit('show_wish',rows[0]);
+        res.json({'status': 'success', 'body': rows[0]});
+      } else {
+        console.log(sql);
+        res.json({'status': 'error','body': err.code});
+      }
+    });
+  }
 });
 
 // POST => CREATE

@@ -166,7 +166,7 @@
 			    
 			    interval = setInterval(function(){
 			    	if ($("#random svg image").length > 80) {
-			    		$("#random svg image:lt(20)").remove();
+			    		$("#random svg image:lt(21)").remove();
 			    	}
 		    		var idx = Math.floor(Math.random() * wishes.length);
 		    		var x = 200 + Math.floor(Math.random() * 400);
@@ -174,7 +174,6 @@
 	    			var s = 0.6 + Math.random() * 0.4;
 		    		transform_to_card(paper,wishes[idx],x,y,s);
 			    },100);
-		    		
 	  		}
 				
 
@@ -184,7 +183,7 @@
     			var c = $("#lucky");
     			var paper = Raphael(c.attr('id'),c.width(),c.height());
 
-    			var center_x = (1024 - CARD_W * 0.9) / 2 - 20;
+    			var center_x = (1024 - CARD_W * 0.9) / 2 - 20,
     				center_y = (768 - CARD_H * 0.9) / 2 - 50;
 	    		var card = transform_to_card(paper,wish,center_x,center_y,0.9);
 	        	$("#random").transition({opacity: 0.2,delay:860}, 0);
@@ -226,73 +225,84 @@
 			    PHOTO_H = 120;
 
 			var PARAMS = [
-			    {
-			        path: "M465 310V185H400A20 20 0 1 1 420 165V205H330",
-			        shadow: "M465 310V185H400A20 20 0 1 1 420 165V205H330",
+				{
+			        path: "M635 465V250H585A20 20 0 1 1 605 230V280H535",
+			        shadow: "M635 465V250H585A20 20 0 1 1 605 230V280H535",
 			        orientation: 'left',
-			        path_end_x: 325,
-			        path_end_y: 205,
+			        path_end_x: 530,
+			        path_end_y: 280,
 			        font_color: "#000",
 			        line_color: "#ffe807",
 			        bg_img: "img/yellow.png",
-			        bias: "-50,0"
+			        bias: "50,0"
 			    },
 			    {
-			        path: "M510 285V165H570A20 20 0 1 1 550 185V145H650",
-			        shadow: "M510 285V165H570A20 20 0 1 1 550 185V145H650",
+			        path: "M470 350V135H420A20 20 0 1 1 440 115V165H370",
+			        shadow: "M470 350V135H420A20 20 0 1 1 440 115V165H370",
+			        orientation: 'left',
+			        path_end_x: 365,
+			        path_end_y: 165,
+			        font_color: "#000",
+			        line_color: "#ffe807",
+			        bg_img: "img/yellow.png",
+			        bias: "50,0"
+			    },
+			    {
+			        path: "M515 285V175H570A20 20 0 1 1 550 195V120H650",
+			        shadow: "M515 285V175H570A20 20 0 1 1 550 195V120H650",
 			        orientation: 'right',
 			        path_end_x: 645,
-			        path_end_y: 145,
+			        path_end_y: 120,
 			        font_color: "#fff",
 			        line_color: "#0cacdb",
 			        bg_img: "img/blue.png",
 			        bias: "-50,0"
 			    },
 			    {
-			        path: "M440 335V390H385V425A20 20 0 1 0 405 405H300",
-			        shadow: "M440 335V390H385V425A20 20 0 1 0 405 405H300",
+			        path: "M420 415V345H350V295A20 20 0 1 1 370 315H290",
+			        shadow: "M420 415V345H350V295A20 20 0 1 1 370 315H290",
 			        orientation: 'left',
-			        path_end_x: 295,
-			        path_end_y: 405,
+			        path_end_x: 285,
+			        path_end_y: 315,
+			        font_color: "#000",
+			        line_color: "#e0002a",
+			        bg_img: "img/red.png",
+			        bias: "50,0"
+			    },
+			    {
+			        path:"M565 420V315A20 20 0 1 0 545 335H580V290H640",
+			        shadow: "M565 420V315A20 20 0 1 0 545 335H580V290H640",
+			        orientation: 'right',
+			        path_end_x: 635,
+			        path_end_y: 290,
+			        font_color: "#000",
+			        line_color: "#43b133",
+			        bg_img: "img/green.png",
+			        bias: "-50,0"
+			    },
+			    {
+			        path: "M465 470H350A20 20 0 1 0 370 490V435H290",
+			        shadow: "M465 470H350A20 20 0 1 0 370 490V435H290",
+			        orientation: 'left',
+			        path_end_x: 285,
+			        path_end_y: 435,
+			        font_color: "#000",
+			        line_color: "#ffffff",
+			        bg_img: "img/white.png",
+			        bias: "50,0"
+			    },
+			    {
+			        path: "M585 340V425H630V470A20 20 0 1 1 610 450H700",
+			        shadow: "M585 340V425H630V470A20 20 0 1 1 610 450H700",
+			        orientation: 'right',
+			        path_end_x: 695,
+			        path_end_y: 450,
 			        font_color: "#000",
 			        line_color: "#e0002a",
 			        bg_img: "img/red.png",
 			        bias: "-50,0"
-			    },
-			    {
-			        path:"M535 430V345A20 20 0 1 0 515 365H555V315H640",
-			        shadow: "M535 430V345A20 20 0 1 0 515 365H555V315H640",
-			        orientation: 'right',
-			        path_end_x: 635,
-			        path_end_y: 315,
-			        font_color: "#000",
-			        line_color: "#43b133",
-			        bg_img: "img/green.png",
-			        bias: "-50,0"
-			    },
-			    {
-			        path: "M420 480H350A20 20 0 1 0 370 500V450H250",
-			        shadow: "M420 480H350A20 20 0 1 0 370 500V450H250",
-			        orientation: 'left',
-			        path_end_x: 245,
-			        path_end_y: 450,
-			        font_color: "#000",
-			        line_color: "#ffffff",
-			        bg_img: "img/white.png",
-			        bias: "-50,0"
-			    },
-			    {
-			        shadow: "M605 355V455H660V490A20 20 0 1 1 640 470H720",
-			        path: "M605 355V455H660V490A20 20 0 1 1 640 470H720",
-			        orientation: 'right',
-			        path_end_x: 715,
-			        path_end_y: 470,
-			        font_color: "#000",
-			        line_color: "#43b133",
-			        bg_img: "img/green.png",
-			        bias: "-50,0"
 			    }           
-			]
+			];
 
 			// class for wish animation
 			function WishAnim(paper,wish,index,wish_type) {
@@ -308,7 +318,7 @@
 			    this.path_anim = this.paper.path();
 
 			    // random scale from 0.7 to 1.0
-			    this.scale = Math.ceil(6 + Math.random() * 4) / 10;
+			    this.scale = 1.5;//Math.ceil(6 + Math.random() * 4) / 10;
 			    var real_w = Math.floor(CARD_W * this.scale); 
 			        real_h = Math.floor(CARD_H * this.scale);
 			    if (this.param.orientation == 'left') {
@@ -361,24 +371,25 @@
 			    this.shadow_anim.attr(attr_obj2);
 
 			    // animations
-			    this.path_anim.animate(attr_obj3,1000, "backIn");
-			    this.shadow_anim.animate(attr_obj4,1000, "backIn",function(){
-			       self.card.animate({transform: 's' + self.scale + ',' + self.scale + ','  + self.card_x + ',' + self.card_y + 't0,0', opacity:1},500,"backOut"); 
+			    this.path_anim.animate(attr_obj3,2e3, "backIn");
+			    this.shadow_anim.animate(attr_obj4,2e3, "backIn",function(){
+			       self.card.animate({transform: 's' + self.scale + ',' + self.scale + ','  + self.card_x + ',' + self.card_y + 't0,0', opacity:1},4e3,"backOut");
 			    });
-			    setTimeout(function(){
-			        self.card.animate({transform: 's' + self.scale + ',' + self.scale + ','  + self.card_x + ',' + self.card_y + 't' + self.param.bias, opacity:0},500,"backIn",function(){
-			            self.path_anim.animate(attr_obj1,2e3, "backOut");
-			            self.shadow_anim.animate(attr_obj2,2e3, "backOut",function(){
-			                setTimeout(function(){
-			                    self.card.forEach(function(ele){
-			                        ele.remove();
-			                    });
-			                    self.path_anim.remove();
-			                    self.shadow_anim.remove();
-			                },2000);
-			            });
-			        });
-			    },20000);
+			    // setTimeout(function(){
+			    //     self.card.animate({transform: 's' + self.scale + ',' + self.scale + ','  + self.card_x + ',' + self.card_y + 't' + self.param.bias, opacity:0},500,"backIn",function(){
+			    //         self.path_anim.animate(attr_obj1,2e3, "backOut");
+			    //         self.shadow_anim.animate(attr_obj2,2e3, "backOut",function(){
+			    //             setTimeout(function(){
+			    //                 self.card.forEach(function(ele){
+			    //                     ele.remove();
+			    //                 });
+			    //                 self.path_anim.remove();
+			    //                 self.shadow_anim.remove();
+			    //             },2000);
+			    //         });
+			    //     });
+			    // },20000);
+				
 			}
 
 			// back to normal
@@ -554,7 +565,7 @@
 
 			    socket.on('show_wish',function(data){
 			    	refresh();
-				    var idx = Math.floor(Math.random() * 6);
+				    var idx = 0;//Math.floor(Math.random() * 6);
 			    	var card = new WishAnim(paper,data,idx,WISH_TYPE.SHOW);
 			    	card.animate_wish();
 			    });
