@@ -11,8 +11,10 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ASIHTTPRequest.h"
 #import "ASIFormDataRequest.h"
+#import "WhiteListDraw.h"
 
 @implementation DrawService
+@synthesize normalList,whiteList;
 
 -(NSNumber *)pickaWish:(NSArray *)aRange
 {
@@ -64,4 +66,29 @@
     NSUserDefaults *userPref = [NSUserDefaults standardUserDefaults];
     return [userPref stringForKey:@"hostaddress"];
 }
+
+-(void)getDrawList
+{
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/ids",[self getHostAddress]]];//set the url of server
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
+    [request addRequestHeader:@"Accept" value:@"application/json"];
+    [request setRequestMethod:@"GET"];
+    [request startSynchronous]; //start to send the message
+    
+    NSError *error;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:[request responseData] options:kNilOptions error:&error];
+    NSDictionary *body = [json objectForKey:@"body"];
+    normalList = [[body objectForKey:@"normal"] mutableCopy];
+    NSMutableArray *newWhiteList = [[NSMutableArray alloc]init];
+    for(NSDictionary *whiteObg in [body objectForKey:@"white"])
+    {
+        WhiteListDraw *newWhite = [[WhiteListDraw alloc]init];
+        newWhite.idnumber = [whiteObg objectForKey:@"id"];
+        newWhite.whitePosition = [whiteObg objectForKey:@"is_white"];
+        [newWhiteList addObject:newWhite];
+    }
+    whiteList = newWhiteList;
+
+}
+
 @end

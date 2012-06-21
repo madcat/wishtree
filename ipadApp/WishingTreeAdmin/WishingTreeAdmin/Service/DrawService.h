@@ -11,9 +11,15 @@
 @interface DrawService : NSObject
 {
     NSArray *drawRange;
+    NSMutableArray *normalList;
+    NSMutableArray *whiteList;
 }
+
+@property (nonatomic,copy) NSMutableArray *normalList;
+@property (nonatomic,copy) NSMutableArray *whiteList;
 
 -(NSNumber *)pickaWish:(NSArray *)aRange;
 -(NSString *)startDraw;
 -(NSString *)stopDraw:(NSNumber *)idnumber;
+-(void)getDrawList;
 @end

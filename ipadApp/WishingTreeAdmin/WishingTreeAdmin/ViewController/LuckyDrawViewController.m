@@ -10,6 +10,7 @@
 #import "WishesService.h"
 #import "DrawService.h"
 #import "DrawResultViewController.h"
+#import "WhiteListDraw.h"
 
 @interface LuckyDrawViewController ()
 @property (nonatomic,strong)WishesService *service;
@@ -44,16 +45,20 @@
 {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
-    
+    drawCount = 0;
+    drawTimesLabel.text = @"Draw Times: 0/25";
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"ipadnormalbg.png"]];
     self.view.backgroundColor = background;
     
-    drawList = [[self.service getAllWishesIndex] mutableCopy];
+    [self.drawbrain getDrawList];
     
-    [drawSwitch setTitle:@"Start" forState:UIControlStateNormal];
-    [drawSwitch setTitle:@"Start" forState:UIControlStateHighlighted];
-    [drawSwitch setTitle:@"Start" forState:UIControlStateDisabled];
-    [drawSwitch setTitle:@"Start" forState:UIControlStateSelected];
+    drawList = self.drawbrain.normalList;
+    whiteList = self.drawbrain.whiteList;
+    
+    [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateNormal];
+    [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-click.png"] forState:UIControlStateHighlighted];
+    [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateDisabled];
+    [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateSelected];
     drawing = false;
 	// Do any additional setup after loading the view.
 }
@@ -70,25 +75,36 @@
 }
 
 - (IBAction)DrawAwish:(id)sender {
+    if(drawCount <= 25){
     if(!drawing)
     {
-        [drawSwitch setTitle:@"Stop" forState:UIControlStateNormal];
-        [drawSwitch setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        [drawSwitch setTitle:@"Stop" forState:UIControlStateHighlighted];
-        [drawSwitch setTitle:@"Stop" forState:UIControlStateDisabled];
-        [drawSwitch setTitle:@"Stop" forState:UIControlStateSelected];
+        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal.png"] forState:UIControlStateNormal];
+        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-click.png"] forState:UIControlStateHighlighted];
+        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal.png"] forState:UIControlStateDisabled];
+        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal.png"] forState:UIControlStateSelected];
         drawing = true;
         [self.drawbrain startDraw];
     }else
     {
         drawing = false;
-        [drawSwitch setTitle:@"Start" forState:UIControlStateNormal];
-        [drawSwitch setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [drawSwitch setTitle:@"Start" forState:UIControlStateHighlighted];
-        [drawSwitch setTitle:@"Start" forState:UIControlStateDisabled];
-        [drawSwitch setTitle:@"Start" forState:UIControlStateSelected];
+        drawCount ++;
+        drawTimesLabel.text = [NSString stringWithFormat:@"Draw Times: %d/25",drawCount];
+        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateNormal];
+        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-click.png"] forState:UIControlStateHighlighted];
+        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateDisabled];
+        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateSelected];
         //[self performSegueWithIdentifier:@"showDrawResult" sender:self];
-        if([drawList count] != 0){
+        BOOL isWhite = false;
+        for(WhiteListDraw *whiteObj in whiteList)
+        {
+            if(drawCount == [whiteObj.whitePosition intValue])
+            {
+                isWhite = true;
+                [self.drawbrain stopDraw:whiteObj.idnumber];
+                break;
+            }
+        }
+        if([drawList count] != 0 && !isWhite){
             NSArray *drawArray = drawList.copy;
             NSNumber *luckynumber = [self.drawbrain pickaWish:drawArray];
             [drawList removeObject:luckynumber];
@@ -100,6 +116,7 @@
                 NSLog(@"failed");
             }
         }
+    }
     }
 }
 

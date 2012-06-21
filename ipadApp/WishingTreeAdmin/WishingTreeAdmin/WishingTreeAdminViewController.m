@@ -7,7 +7,7 @@
 //
 
 #import "WishingTreeAdminViewController.h"
-#import "WishListViewController.h"
+#import "WishStageViewController.h"
 #import "WishesService.h"
 
 @interface WishingTreeAdminViewController ()

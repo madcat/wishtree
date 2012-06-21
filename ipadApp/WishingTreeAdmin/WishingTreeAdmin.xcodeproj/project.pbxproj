@@ -37,6 +37,13 @@
 		29575BAA1588489C00B9F15F /* WishesService.m in Sources */ = {isa = PBXBuildFile; fileRef = 29575BA91588489C00B9F15F /* WishesService.m */; };
 		29575BAD1588503500B9F15F /* WishDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29575BAC1588503500B9F15F /* WishDetailViewController.m */; };
 		29575BB815889FD700B9F15F /* WishListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29575BB715889FD600B9F15F /* WishListViewController.m */; };
+		29776C9615930BAE00EB42F9 /* WishStageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29776C9515930BAE00EB42F9 /* WishStageViewController.m */; };
+		29776C9D1593122300EB42F9 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 29776C9C1593122300EB42F9 /* white.png */; };
+		29776CA01593202200EB42F9 /* WhiteListDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 29776C9F1593202200EB42F9 /* WhiteListDraw.m */; };
+		29776CA915933B5700EB42F9 /* start-click.png in Resources */ = {isa = PBXBuildFile; fileRef = 29776CA515933B5700EB42F9 /* start-click.png */; };
+		29776CAA15933B5700EB42F9 /* start-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 29776CA615933B5700EB42F9 /* start-normal.png */; };
+		29776CAB15933B5700EB42F9 /* stop-click.png in Resources */ = {isa = PBXBuildFile; fileRef = 29776CA715933B5700EB42F9 /* stop-click.png */; };
+		29776CAC15933B5700EB42F9 /* stop-normal.png in Resources */ = {isa = PBXBuildFile; fileRef = 29776CA815933B5700EB42F9 /* stop-normal.png */; };
 		29809872158C574900009524 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29809871158C574900009524 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +103,15 @@
 		29575BAC1588503500B9F15F /* WishDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WishDetailViewController.m; path = ViewController/WishDetailViewController.m; sourceTree = "<group>"; };
 		29575BB615889FD600B9F15F /* WishListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WishListViewController.h; path = ViewController/WishListViewController.h; sourceTree = "<group>"; };
 		29575BB715889FD600B9F15F /* WishListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WishListViewController.m; path = ViewController/WishListViewController.m; sourceTree = "<group>"; };
+		29776C9415930BAE00EB42F9 /* WishStageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WishStageViewController.h; path = ViewController/WishStageViewController.h; sourceTree = "<group>"; };
+		29776C9515930BAE00EB42F9 /* WishStageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WishStageViewController.m; path = ViewController/WishStageViewController.m; sourceTree = "<group>"; };
+		29776C9C1593122300EB42F9 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = white.png; path = Pic/white.png; sourceTree = "<group>"; };
+		29776C9E1593202200EB42F9 /* WhiteListDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WhiteListDraw.h; path = Model/WhiteListDraw.h; sourceTree = "<group>"; };
+		29776C9F1593202200EB42F9 /* WhiteListDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteListDraw.m; path = Model/WhiteListDraw.m; sourceTree = "<group>"; };
+		29776CA515933B5700EB42F9 /* start-click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "start-click.png"; path = "Pic/start-click.png"; sourceTree = "<group>"; };
+		29776CA615933B5700EB42F9 /* start-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "start-normal.png"; path = "Pic/start-normal.png"; sourceTree = "<group>"; };
+		29776CA715933B5700EB42F9 /* stop-click.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stop-click.png"; path = "Pic/stop-click.png"; sourceTree = "<group>"; };
+		29776CA815933B5700EB42F9 /* stop-normal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stop-normal.png"; path = "Pic/stop-normal.png"; sourceTree = "<group>"; };
 		29809871158C574900009524 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +165,11 @@
 		2922D9F31589F81100A5B0C9 /* pic */ = {
 			isa = PBXGroup;
 			children = (
+				29776CA515933B5700EB42F9 /* start-click.png */,
+				29776CA615933B5700EB42F9 /* start-normal.png */,
+				29776CA715933B5700EB42F9 /* stop-click.png */,
+				29776CA815933B5700EB42F9 /* stop-normal.png */,
+				29776C9C1593122300EB42F9 /* white.png */,
 				293D6A78158B39B100B459E1 /* ipadnormalbg.png */,
 				2922D9F61589FBD700A5B0C9 /* ipad1bg.png */,
 			);
@@ -227,6 +248,8 @@
 				29575BAC1588503500B9F15F /* WishDetailViewController.m */,
 				29575BB615889FD600B9F15F /* WishListViewController.h */,
 				29575BB715889FD600B9F15F /* WishListViewController.m */,
+				29776C9415930BAE00EB42F9 /* WishStageViewController.h */,
+				29776C9515930BAE00EB42F9 /* WishStageViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -236,6 +259,8 @@
 			children = (
 				29575BA11588413800B9F15F /* Wish.h */,
 				29575BA21588413800B9F15F /* Wish.m */,
+				29776C9E1593202200EB42F9 /* WhiteListDraw.h */,
+				29776C9F1593202200EB42F9 /* WhiteListDraw.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -307,6 +332,11 @@
 				2922D9F71589FBD700A5B0C9 /* ipad1bg.png in Resources */,
 				293D6A79158B39B100B459E1 /* ipadnormalbg.png in Resources */,
 				29809872158C574900009524 /* Settings.bundle in Resources */,
+				29776C9D1593122300EB42F9 /* white.png in Resources */,
+				29776CA915933B5700EB42F9 /* start-click.png in Resources */,
+				29776CAA15933B5700EB42F9 /* start-normal.png in Resources */,
+				29776CAB15933B5700EB42F9 /* stop-click.png in Resources */,
+				29776CAC15933B5700EB42F9 /* stop-normal.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +366,8 @@
 				2922D9E01589E67000A5B0C9 /* ASIInputStream.m in Sources */,
 				2922D9E11589E67000A5B0C9 /* ASINetworkQueue.m in Sources */,
 				2922D9E21589E67000A5B0C9 /* Reachability.m in Sources */,
+				29776C9615930BAE00EB42F9 /* WishStageViewController.m in Sources */,
+				29776CA01593202200EB42F9 /* WhiteListDraw.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -411,11 +443,13 @@
 		29575B8F1588344800B9F15F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Chen (L8Z6W9PDQB)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WishingTreeAdmin/WishingTreeAdmin-Prefix.pch";
 				INFOPLIST_FILE = "WishingTreeAdmin/WishingTreeAdmin-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5026D019-32C8-4102-AF8D-EB3CBEE151D5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -423,11 +457,13 @@
 		29575B901588344800B9F15F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Chen (L8Z6W9PDQB)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WishingTreeAdmin/WishingTreeAdmin-Prefix.pch";
 				INFOPLIST_FILE = "WishingTreeAdmin/WishingTreeAdmin-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5026D019-32C8-4102-AF8D-EB3CBEE151D5";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
