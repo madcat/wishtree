@@ -5,7 +5,8 @@ var express = require('express'),
   mysql = require('mysql'),
   uuid = require('node-uuid'),
   fs = require('fs'),
-  path = require('path');
+  path = require('path'),
+  us = require('underscore');
 
   
 var log_file = fs.createWriteStream('./wishlist.log',{flags: 'a'});
@@ -69,7 +70,7 @@ app.get('/wishes/:id?',function(req, res){
       }
     });
   } else {
-    sql = "SELECT * FROM " + settings.db_table + " ORDER BY id";
+    sql = "SELECT * FROM " + settings.db_table + " WHERE is_show = 1 ORDER BY id";
     db.query(sql,function(err,rows){
       if (!err) {
         res.json({'status': 'success', 'body': rows});
@@ -82,13 +83,12 @@ app.get('/wishes/:id?',function(req, res){
 });
 
 app.get('/ids',function(req,res){
-  var sql = "SELECT id FROM " + settings.db_table + " ORDER BY id";
+  var sql = "SELECT id,is_white FROM " + settings.db_table + " WHERE is_show = 1 ORDER BY id";
   db.query(sql,function(err,rows){
       if (!err) {
-        var arr = [];
-        for (var i = 0; i < rows.length; i++) {
-          arr.push(rows[i].id);
-        }
+        var arr = {};
+        arr['normal'] = us.pluck(us.filter(rows,function(row){return row.is_white == -1;}),'id');
+        arr['white'] = us.filter(rows,function(row){return row.is_white != -1;});
         res.json({'status': 'success', 'body': arr});
       } else {
         console.log(sql);
@@ -166,14 +166,26 @@ app.post('/luck/:action',function(req,res){
   if (req.params.action == 'start') {
     io.sockets.emit('luck_start');
     res.json({'status': 'success', 'body': ''});
+  } else if (req.params.action == "stop111") {
+    db.query("SELECT * FROM " + settings.db_table + " WHERE is_show = 1 ORDER BY id",function(err,rows){
+      if (!err) {
+        var luck = Math.floor(Math.random() * rows.length);
+        io.sockets.emit('luck_stop',rows[luck]);
+        res.json({'status': 'success', 'body': rows[luck]});
+      } else {
+        console.log(sql);
+        res.json({'status': 'error','body': err.code});
+      }
+    });
   } else {
     db.query("SELECT * FROM " + settings.db_table +" WHERE id = " + req.body.id,function(err,rows){
       if (!err) {
         if (req.params.action == "stop") {
           io.sockets.emit('luck_stop',rows[0]);
-        } else if (req.params.action == "show") {
-          io.sockets.emit('show_wish',rows[0]);
-        }
+        } 
+        // else if (req.params.action == "show") {
+        //   io.sockets.emit('show_wish',rows[0]);
+        // }
         res.json({'status': 'success', 'body': rows[0]});
       } else {
         res.json({'status': 'error','body': err.code});
