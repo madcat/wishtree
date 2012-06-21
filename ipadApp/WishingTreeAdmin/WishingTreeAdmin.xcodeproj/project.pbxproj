@@ -443,12 +443,14 @@
 		29575B8F1588344800B9F15F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Chen (L8Z6W9PDQB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Pinky Jie (HQU44EKT4B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pinky Jie (HQU44EKT4B)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WishingTreeAdmin/WishingTreeAdmin-Prefix.pch";
 				INFOPLIST_FILE = "WishingTreeAdmin/WishingTreeAdmin-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5026D019-32C8-4102-AF8D-EB3CBEE151D5";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5026D019-32C8-4102-AF8D-EB3CBEE151D5";
 				WRAPPER_EXTENSION = app;
 			};
@@ -457,12 +459,14 @@
 		29575B901588344800B9F15F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xiao Chen (L8Z6W9PDQB)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Pinky Jie (HQU44EKT4B)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Pinky Jie (HQU44EKT4B)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WishingTreeAdmin/WishingTreeAdmin-Prefix.pch";
 				INFOPLIST_FILE = "WishingTreeAdmin/WishingTreeAdmin-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "5026D019-32C8-4102-AF8D-EB3CBEE151D5";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5026D019-32C8-4102-AF8D-EB3CBEE151D5";
 				WRAPPER_EXTENSION = app;
 			};

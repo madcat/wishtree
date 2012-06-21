@@ -82,6 +82,19 @@ app.get('/wishes/:id?',function(req, res){
   }
 });
 
+app.get('/wishes_all',function(req, res){
+  var sql;
+  sql = "SELECT * FROM " + settings.db_table + " ORDER BY id";
+  db.query(sql,function(err,rows){
+    if (!err) {
+      res.json({'status': 'success', 'body': rows});
+    } else {
+      console.log(sql);
+      res.json({'status': 'error','body': err.code});
+    }
+  });
+});
+
 app.get('/ids',function(req,res){
   var sql = "SELECT id,is_white FROM " + settings.db_table + " WHERE is_show = 1 ORDER BY id";
   db.query(sql,function(err,rows){
@@ -202,6 +215,7 @@ app.put('/wishes/:id',function(req,res){
       " SET is_show = " + req.body.show + 
       " WHERE id = " + req.params.id,function(err,result){
     if (!err) {
+      io.sockets.emit('show_change',{id:req.params.id,show:req.body.show});
       res.json({'status': 'success', 'body': result});
     } else {
       res.json({'status': 'error','body': err.code});

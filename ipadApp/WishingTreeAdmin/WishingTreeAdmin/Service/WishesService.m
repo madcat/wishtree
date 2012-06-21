@@ -17,7 +17,7 @@
 
 - (NSArray *)getWishList
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/wishes",[self getHostAddress]]];//set the url of server
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/show",[self getHostAddress]]];//set the url of server
     ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url]; //make a ASIHTTP request 
     [request addRequestHeader:@"Accept" value:@"application/json"];
     [request setRequestMethod:@"GET"];
@@ -130,11 +130,10 @@
 
 -(NSString *)showWish:(NSNumber *)wishId
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/luck/show",[self getHostAddress]]];//set the url of server
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];    
-    [request setPostValue:wishId forKey:@"id"];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/show/%@",[self getHostAddress],[wishId stringValue]]];//set the url of server
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
     [request addRequestHeader:@"Accept" value:@"application/json"];
-    [request setRequestMethod:@"POST"];
+    [request setRequestMethod:@"GET"];
     [request startSynchronous]; //start to send the message
     
     NSError *error;

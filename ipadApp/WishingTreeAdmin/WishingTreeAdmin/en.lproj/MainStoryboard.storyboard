@@ -111,7 +111,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-103" y="-247"/>
+            <point key="canvasLocation" x="-201" y="-175"/>
         </scene>
         <!--Draw Result View Controller-->
         <scene sceneID="oVp-Rr-JJR">
@@ -355,49 +355,6 @@
             <point key="canvasLocation" x="-2282" y="-1010"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="DrawResultViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DrawResultViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="contentView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="LuckyDrawViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/LuckyDrawViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="DrawAwish:"/>
-                <relationship kind="outlet" name="drawSwitch" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="drawTimesLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WishDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WishDetailViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="showWish:"/>
-                <relationship kind="outlet" name="contentView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WishStageViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WishStageViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="begin2Show:"/>
-                <relationship kind="action" name="next2Show:"/>
-                <relationship kind="action" name="prev2Show:"/>
-                <relationship kind="outlet" name="begianButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="cardBackground" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="contentView" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="indexLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nextButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="prevButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="WishingTreeAdminViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WishingTreeAdminViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>
@@ -405,7 +362,5 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="55P-XA-Ma1"/>
-        <segue reference="gxu-T7-S2a"/>
-        <segue reference="Imq-ez-ibX"/>
     </inferredMetricsTieBreakers>
 </document>

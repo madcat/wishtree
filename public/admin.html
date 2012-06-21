@@ -60,7 +60,7 @@
             self.wishes = ko.observableArray([]);
 
         // load all booths from server
-        $.getJSON("/wishes",function(json){
+        $.getJSON("/wishes_all",function(json){
             if (json.status == "success") {
                 var mapped_wishes = _.map(json.body,function(wish){
                     return new GM_Wish(wish);

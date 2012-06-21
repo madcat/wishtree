@@ -40,16 +40,15 @@ function shift_obj(key) {
 }
 
 // change object attribute
-function change_attr(key,wish,attr,value) {
+function change_attr(key,id,attr,value) {
     var s = store.getItem(key);
     var arr = JSON.parse(s);
     _.each(arr,function(ele){
-        if (ele.id == wish.id) {
+        if (ele.id == id) {
             ele[attr] = value;
         }
     });
     store.setItem(key,JSON.stringify(arr));
-
 }
 
 // sizes
@@ -127,7 +126,7 @@ var PARAMS = [
         font_color: "#000",
         line_color: "#ffffff",
         bg_img: "img/white.png",
-        bias: "50,0",
+        bias: "-50,0",
         scale: 0.7
     },
     {
@@ -219,14 +218,14 @@ WishAnim.prototype.animate_wish = function() {
     // animations
     this.path_anim.animate(attr_obj3,4e3, "backIn");
     this.shadow_anim.animate(attr_obj4,4e3, "backIn",function(){
-       self.card.animate({transform: 's' + self.scale + ',' + self.scale + ','  + self.card_x + ',' + self.card_y + 't0,0', opacity:1},2e3,"backOut"); 
+       self.card.animate({transform: 's' + self.scale + ',' + self.scale + ','  + self.card_x + ',' + self.card_y + 't0,0', opacity:1},2e3);//,"backOut"); 
     });
     setTimeout(function(){
         animating_idx_arr.shift();
-        self.card.animate({transform: 's' + self.scale + ',' + self.scale + ','  + self.card_x + ',' + self.card_y + 't' + self.param.bias, opacity:0},2e3,"backIn",function(){
+        self.card.animate({transform: 's' + self.scale + ',' + self.scale + ','  + self.card_x + ',' + self.card_y + 't' + self.param.bias, opacity:0},2e3/*,"backIn"*/,function(){
             self.path_anim.animate(attr_obj1,4e3, "backOut");
             self.shadow_anim.animate(attr_obj2,4e3, "backOut",function(){
-                change_attr("local_wish",self.wish,"is_animate",false);
+                change_attr("local_wish",self.wish.id,"is_animate",false);
                 setTimeout(function(){
                     self.card.forEach(function(ele){
                         ele.remove();
@@ -294,7 +293,7 @@ $(document).ready(function(){
     // update database to local storage
     $.ajax({
         type: 'GET',
-        url: "http://localhost:3000/wishes",
+        url: "http://localhost:3000/wishes_all",
         dataType: 'json',
         success: function(json) {
             if (json.status == "success") {
@@ -320,6 +319,9 @@ $(document).ready(function(){
     socket.on('new_wish', function (data) {
         data.is_animate = false;
         add_obj('incoming_wish',data);
+    });
+    socket.on('show_change',function(data){
+        change_attr('local_wish',data.id,'is_show',data.show);
     });
 
     // background animation
@@ -457,9 +459,10 @@ $(document).ready(function(){
             type = WISH_TYPE.INCOMING;
         } else if (store.getItem('local_wish').length > 0) {
             var local_arr = JSON.parse(store.getItem('local_wish'));
+            local_arr = _.filter(local_arr,function(ele){return ele.is_show == 1;});
             var sorted_wish = _.sortBy(local_arr,function(ele){return ele.id;});
             var id_arr = _.pluck(sorted_wish,'id');
-            id_arr.sort();
+            id_arr = _.sortBy(id_arr,function(num){return num;});
             var min_id = sorted_wish[0].id;
             var max_id = sorted_wish[sorted_wish.length - 1].id;
             if (now_play_id == undefined || now_play_id == max_id) {
