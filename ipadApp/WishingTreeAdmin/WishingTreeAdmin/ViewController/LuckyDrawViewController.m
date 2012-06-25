@@ -55,10 +55,12 @@
     drawList = self.drawbrain.normalList;
     whiteList = self.drawbrain.whiteList;
     
-    [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateNormal];
-    [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-click.png"] forState:UIControlStateHighlighted];
-    [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateDisabled];
-    [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateSelected];
+    [startButton setEnabled:YES];
+    [stopButton setEnabled:NO];
+    //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateNormal];
+    //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-click.png"] forState:UIControlStateHighlighted];
+    //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateDisabled];
+    //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateSelected];
     drawing = false;
 	// Do any additional setup after loading the view.
 }
@@ -76,24 +78,65 @@
 
 - (IBAction)DrawAwish:(id)sender {
     if(drawCount <= 25){
-    if(!drawing)
+        if(!drawing)
+        {
+            //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal.png"] forState:UIControlStateNormal];
+            //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-click.png"] forState:UIControlStateHighlighted];
+            //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal.png"] forState:UIControlStateDisabled];
+            //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal.png"] forState:UIControlStateSelected];
+            drawing = true;
+            [self.drawbrain startDraw];
+        }else
+        {
+            drawing = false;
+            drawCount ++;
+            drawTimesLabel.text = [NSString stringWithFormat:@"Draw Times: %d/25",drawCount];
+            //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateNormal];
+            //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-click.png"] forState:UIControlStateHighlighted];
+            //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateDisabled];
+            //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateSelected];
+            //[self performSegueWithIdentifier:@"showDrawResult" sender:self];
+            BOOL isWhite = false;
+            for(WhiteListDraw *whiteObj in whiteList)
+            {
+                if(drawCount == [whiteObj.whitePosition intValue])
+                {
+                    isWhite = true;
+                    [self.drawbrain stopDraw:whiteObj.idnumber];
+                    break;
+                }
+            }
+            if([drawList count] != 0 && !isWhite){
+                NSArray *drawArray = drawList.copy;
+                NSNumber *luckynumber = [self.drawbrain pickaWish:drawArray];
+                [drawList removeObject:luckynumber];
+                if([[self.drawbrain stopDraw:luckynumber] isEqualToString:@"success"])
+                {
+                    NSLog(@"success");
+                }else
+                {
+                    NSLog(@"failed");
+                }
+            }
+        }
+    }
+}
+
+- (IBAction)startDraw:(id)sender {
+    [self.drawbrain startDraw];
+    [startButton setEnabled:NO];
+    [stopButton setEnabled:YES];
+}
+
+- (IBAction)stopDraw:(id)sender {
+    if(drawCount <= 24)
     {
-        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal-1.png"] forState:UIControlStateNormal];
-        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-click-1.png"] forState:UIControlStateHighlighted];
-        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal-1.png"] forState:UIControlStateDisabled];
-        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal-1.png"] forState:UIControlStateSelected];
-        drawing = true;
-        [self.drawbrain startDraw];
-    }else
-    {
-        drawing = false;
         drawCount ++;
         drawTimesLabel.text = [NSString stringWithFormat:@"Draw Times: %d/25",drawCount];
-        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateNormal];
-        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-click.png"] forState:UIControlStateHighlighted];
-        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateDisabled];
-        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateSelected];
-        //[self performSegueWithIdentifier:@"showDrawResult" sender:self];
+        
+        [startButton setEnabled:YES];
+        [stopButton setEnabled:NO];
+        
         BOOL isWhite = false;
         for(WhiteListDraw *whiteObj in whiteList)
         {
@@ -116,7 +159,10 @@
                 NSLog(@"failed");
             }
         }
-    }
+    }else
+    {
+        [startButton setEnabled:NO];
+        [stopButton setEnabled:NO];
     }
 }
 

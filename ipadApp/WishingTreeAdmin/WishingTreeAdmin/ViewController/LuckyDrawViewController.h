@@ -10,7 +10,9 @@
 
 @interface LuckyDrawViewController : UIViewController
 {
-    IBOutlet UIButton *drawSwitch;
+    //IBOutlet UIButton *drawSwitch;
+    IBOutlet UIButton *startButton;
+    IBOutlet UIButton *stopButton;
     IBOutlet UILabel *drawTimesLabel;
     BOOL drawing;
     NSMutableArray *drawList;
@@ -18,6 +20,8 @@
     int drawCount;
 }
 
-- (IBAction)DrawAwish:(id)sender;
+//- (IBAction)DrawAwish:(id)sender;
+- (IBAction)startDraw:(id)sender;
+- (IBAction)stopDraw:(id)sender;
 
 @end
