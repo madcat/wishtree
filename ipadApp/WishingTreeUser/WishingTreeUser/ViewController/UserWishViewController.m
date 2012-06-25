@@ -132,13 +132,13 @@
         backButton.frame = CGRectMake(73, 630, 140, 55);
         nextButton.frame = CGRectMake(555, 630, 140, 55);
         btnBanner.frame = CGRectMake(0, 630, 768, 59);
-        maxChar = 24;
+        maxChar = 21;
     }else
     {
         backButton.frame = CGRectMake(73, 680, 140, 55);
         nextButton.frame = CGRectMake(555, 680, 140, 55);
         btnBanner.frame = CGRectMake(0, 680, 768, 59);
-        maxChar = 60;
+        maxChar = 55;
     }
 }
 

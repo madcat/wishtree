@@ -65,7 +65,7 @@ app.get('/wishes/:id?',function(req, res){
       if (!err) {
         res.json({'status': 'success', 'body': rows[0]});
       } else {
-        console.log(sql);
+        console.log(err);
         res.json({'status': 'error','body': err.code});
       }
     });
@@ -75,7 +75,7 @@ app.get('/wishes/:id?',function(req, res){
       if (!err) {
         res.json({'status': 'success', 'body': rows});
       } else {
-        console.log(sql);
+        console.log(err);
         res.json({'status': 'error','body': err.code});
       }
     });
@@ -89,7 +89,7 @@ app.get('/wishes_all',function(req, res){
     if (!err) {
       res.json({'status': 'success', 'body': rows});
     } else {
-      console.log(sql);
+      console.log(err);
       res.json({'status': 'error','body': err.code});
     }
   });
@@ -104,7 +104,7 @@ app.get('/ids',function(req,res){
         arr['white'] = us.filter(rows,function(row){return row.is_white != -1;});
         res.json({'status': 'success', 'body': arr});
       } else {
-        console.log(sql);
+        console.log(err);
         res.json({'status': 'error','body': err.code});
       }
     });
@@ -119,7 +119,7 @@ app.get('/show/:id?',function(req,res){
       if (!err) {
         res.json({'status': 'success', 'body': rows});
       } else {
-        console.log(sql);
+        console.log(err);
         res.json({'status': 'error','body': err.code});
       }
     });
@@ -130,7 +130,7 @@ app.get('/show/:id?',function(req,res){
         io.sockets.emit('show_wish',rows[0]);
         res.json({'status': 'success', 'body': rows[0]});
       } else {
-        console.log(sql);
+        console.log(err);
         res.json({'status': 'error','body': err.code});
       }
     });
@@ -152,7 +152,7 @@ app.post('/wishes',function(req,res){
         db.query("INSERT INTO " + settings.db_table + 
           "(first_name,last_name,pic_path,wish_text) " +
           " VALUES('" + req.body.fn  + "','" + req.body.ln + "','" +
-          node_path + "','" + req.body.text + "')",function(err,result){
+          node_path + "','" + req.body.text.replace("'","\\'") + "')",function(err,result){
           if (!err) {
             var new_wish = {
               id: result.insertId,
@@ -165,6 +165,7 @@ app.post('/wishes',function(req,res){
             io.sockets.emit('new_wish',new_wish);
             res.json({'status': 'success', 'body': result});
           } else {
+            console.log(err);
             res.json({'status': 'error','body': err.code});
           }
         });
@@ -186,7 +187,7 @@ app.post('/luck/:action',function(req,res){
         io.sockets.emit('luck_stop',rows[luck]);
         res.json({'status': 'success', 'body': rows[luck]});
       } else {
-        console.log(sql);
+        console.log(err);
         res.json({'status': 'error','body': err.code});
       }
     });
@@ -201,6 +202,7 @@ app.post('/luck/:action',function(req,res){
         // }
         res.json({'status': 'success', 'body': rows[0]});
       } else {
+        console.log(err);
         res.json({'status': 'error','body': err.code});
       }
     });
@@ -218,6 +220,7 @@ app.put('/wishes/:id',function(req,res){
       io.sockets.emit('show_change',{id:req.params.id,show:req.body.show});
       res.json({'status': 'success', 'body': result});
     } else {
+      console.log(err);
       res.json({'status': 'error','body': err.code});
     }
   });
