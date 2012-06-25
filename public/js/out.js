@@ -293,11 +293,15 @@ $(document).ready(function(){
     // update database to local storage
     $.ajax({
         type: 'GET',
-        url: "http://localhost:3000/wishes_all",
+        url: "/wishes_all",
         dataType: 'json',
         success: function(json) {
             if (json.status == "success") {
-                store.setItem('local_wish',JSON.stringify(json.body));
+                if (json.body.length == 0) {
+                    store.setItem('local_wish',"");
+                } else {
+                    store.setItem('local_wish',JSON.stringify(json.body));
+                }
             }
         }
     });

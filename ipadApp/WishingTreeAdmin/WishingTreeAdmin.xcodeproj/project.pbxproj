@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15BB9F5C1598306600614D70 /* stop-click-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 15BB9F5A1598306600614D70 /* stop-click-1.png */; };
+		15BB9F5D1598306600614D70 /* stop-normal-1.png in Resources */ = {isa = PBXBuildFile; fileRef = 15BB9F5B1598306600614D70 /* stop-normal-1.png */; };
 		2922D9BD1589D73E00A5B0C9 /* DrawService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2922D9BC1589D73E00A5B0C9 /* DrawService.m */; };
 		2922D9DA1589E67000A5B0C9 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 2922D9C51589E67000A5B0C9 /* ASIAuthenticationDialog.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		2922D9DB1589E67000A5B0C9 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = 2922D9C81589E67000A5B0C9 /* ASIDataCompressor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -48,6 +50,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		15BB9F5A1598306600614D70 /* stop-click-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stop-click-1.png"; path = "../../../../../../Dropbox/projects/pivot-marketing/groupm627/ipad/ipad design/新建文件夹/stop-click-1.png"; sourceTree = "<group>"; };
+		15BB9F5B1598306600614D70 /* stop-normal-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stop-normal-1.png"; path = "../../../../../../Dropbox/projects/pivot-marketing/groupm627/ipad/ipad design/新建文件夹/stop-normal-1.png"; sourceTree = "<group>"; };
 		2922D9BB1589D73E00A5B0C9 /* DrawService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawService.h; path = Service/DrawService.h; sourceTree = "<group>"; };
 		2922D9BC1589D73E00A5B0C9 /* DrawService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DrawService.m; path = Service/DrawService.m; sourceTree = "<group>"; };
 		2922D9C41589E67000A5B0C9 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASIAuthenticationDialog.h; path = WishingTreeAdmin/ASIHTTPRequest/ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -165,6 +169,8 @@
 		2922D9F31589F81100A5B0C9 /* pic */ = {
 			isa = PBXGroup;
 			children = (
+				15BB9F5A1598306600614D70 /* stop-click-1.png */,
+				15BB9F5B1598306600614D70 /* stop-normal-1.png */,
 				29776CA515933B5700EB42F9 /* start-click.png */,
 				29776CA615933B5700EB42F9 /* start-normal.png */,
 				29776CA715933B5700EB42F9 /* stop-click.png */,
@@ -337,6 +343,8 @@
 				29776CAA15933B5700EB42F9 /* start-normal.png in Resources */,
 				29776CAB15933B5700EB42F9 /* stop-click.png in Resources */,
 				29776CAC15933B5700EB42F9 /* stop-normal.png in Resources */,
+				15BB9F5C1598306600614D70 /* stop-click-1.png in Resources */,
+				15BB9F5D1598306600614D70 /* stop-normal-1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -78,10 +78,10 @@
     if(drawCount <= 25){
     if(!drawing)
     {
-        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal.png"] forState:UIControlStateNormal];
-        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-click.png"] forState:UIControlStateHighlighted];
-        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal.png"] forState:UIControlStateDisabled];
-        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal.png"] forState:UIControlStateSelected];
+        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal-1.png"] forState:UIControlStateNormal];
+        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-click-1.png"] forState:UIControlStateHighlighted];
+        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal-1.png"] forState:UIControlStateDisabled];
+        [drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal-1.png"] forState:UIControlStateSelected];
         drawing = true;
         [self.drawbrain startDraw];
     }else
