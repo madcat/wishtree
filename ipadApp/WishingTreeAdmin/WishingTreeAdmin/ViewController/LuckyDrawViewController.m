@@ -46,7 +46,7 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     drawCount = 0;
-    drawTimesLabel.text = @"Draw Times: 0/25";
+    drawTimesLabel.text = @"Draw Times: 0/21";
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"ipadnormalbg.png"]];
     self.view.backgroundColor = background;
     
@@ -77,7 +77,7 @@
 }
 
 - (IBAction)DrawAwish:(id)sender {
-    if(drawCount <= 25){
+    if(drawCount <= 21){
         if(!drawing)
         {
             //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal.png"] forState:UIControlStateNormal];
@@ -90,7 +90,7 @@
         {
             drawing = false;
             drawCount ++;
-            drawTimesLabel.text = [NSString stringWithFormat:@"Draw Times: %d/25",drawCount];
+            drawTimesLabel.text = [NSString stringWithFormat:@"Draw Times: %d/21",drawCount];
             //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateNormal];
             //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-click.png"] forState:UIControlStateHighlighted];
             //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateDisabled];
@@ -129,10 +129,10 @@
 }
 
 - (IBAction)stopDraw:(id)sender {
-    if(drawCount <= 24)
+    if(drawCount <= 20)
     {
         drawCount ++;
-        drawTimesLabel.text = [NSString stringWithFormat:@"Draw Times: %d/25",drawCount];
+        drawTimesLabel.text = [NSString stringWithFormat:@"Draw Times: %d/21",drawCount];
         
         [startButton setEnabled:YES];
         [stopButton setEnabled:NO];
