@@ -18,7 +18,7 @@ var io = require('socket.io').listen(app);
 app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
-  app.use(express.logger({format: '[:date] :method :status :url '}));
+  //app.use(express.logger({format: '[:date] :method :status :url '}));
   app.use(express.static(__dirname + '/public'));
   app.set('view options', {layout: false});
 });
@@ -143,7 +143,7 @@ app.post('/wishes',function(req,res){
   var new_path = './public/' + settings.pic_path;
   var full_name = new_path + "/" + new_name;
   var node_path = settings.pic_path + "/" + new_name;
-  path.exists(new_path, function(exist){
+  fs.exists(new_path, function(exist){
     if (!exist) {
       fs.mkdirSync(new_path);
     }

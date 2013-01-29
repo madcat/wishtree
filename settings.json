@@ -1,10 +1,10 @@
 {
 	"db_addr": "localhost",
 	"db_port": "3306",
-	"db_name": "groupM",
+	"db_name": "wishtree",
 	"db_table": "wishlist",
 	"db_login": "root",
-	"db_pass": "123",
+	"db_pass": "a123123",
 	"pic_path": "user_images",
 	"key": "123"
 }
