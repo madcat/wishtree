@@ -58,6 +58,14 @@
 		29FFC8F215809C3C0014BE3E /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29FFC8F115809C3C0014BE3E /* CoreVideo.framework */; };
 		29FFC8F815809F8A0014BE3E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29FFC8F715809F8A0014BE3E /* CoreMedia.framework */; };
 		29FFC9071580C5BD0014BE3E /* UserConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FFC9061580C5BD0014BE3E /* UserConfirmViewController.m */; };
+		67B4821D16B8DA4C00232244 /* btnStart.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B4821B16B8DA4C00232244 /* btnStart.png */; };
+		67B4821E16B8DA4C00232244 /* btnStart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B4821C16B8DA4C00232244 /* btnStart@2x.png */; };
+		67B4822616B8DC0C00232244 /* ipad2bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B4822016B8DC0C00232244 /* ipad2bg@2x.png */; };
+		67B4822716B8DC0C00232244 /* ipad3bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B4822116B8DC0C00232244 /* ipad3bg@2x.png */; };
+		67B4822816B8DC0C00232244 /* ipad4bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B4822216B8DC0C00232244 /* ipad4bg@2x.png */; };
+		67B4822916B8DC0C00232244 /* ipad5bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B4822316B8DC0C00232244 /* ipad5bg@2x.png */; };
+		67B4822A16B8DC0C00232244 /* ipad6bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B4822416B8DC0C00232244 /* ipad6bg@2x.png */; };
+		67B4822C16B8DCAC00232244 /* ipad1bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B4822B16B8DCAC00232244 /* ipad1bg@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +145,14 @@
 		29FFC8F715809F8A0014BE3E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		29FFC9051580C5BD0014BE3E /* UserConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserConfirmViewController.h; path = ViewController/UserConfirmViewController.h; sourceTree = "<group>"; };
 		29FFC9061580C5BD0014BE3E /* UserConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserConfirmViewController.m; path = ViewController/UserConfirmViewController.m; sourceTree = "<group>"; };
+		67B4821B16B8DA4C00232244 /* btnStart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = btnStart.png; path = pic/btnStart.png; sourceTree = "<group>"; };
+		67B4821C16B8DA4C00232244 /* btnStart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btnStart@2x.png"; path = "pic/btnStart@2x.png"; sourceTree = "<group>"; };
+		67B4822016B8DC0C00232244 /* ipad2bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ipad2bg@2x.png"; path = "pic/ipad2bg@2x.png"; sourceTree = "<group>"; };
+		67B4822116B8DC0C00232244 /* ipad3bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ipad3bg@2x.png"; path = "pic/ipad3bg@2x.png"; sourceTree = "<group>"; };
+		67B4822216B8DC0C00232244 /* ipad4bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ipad4bg@2x.png"; path = "pic/ipad4bg@2x.png"; sourceTree = "<group>"; };
+		67B4822316B8DC0C00232244 /* ipad5bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ipad5bg@2x.png"; path = "pic/ipad5bg@2x.png"; sourceTree = "<group>"; };
+		67B4822416B8DC0C00232244 /* ipad6bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ipad6bg@2x.png"; path = "pic/ipad6bg@2x.png"; sourceTree = "<group>"; };
+		67B4822B16B8DCAC00232244 /* ipad1bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ipad1bg@2x.png"; path = "pic/ipad1bg@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +296,14 @@
 		29575BC31588A4BA00B9F15F /* pic */ = {
 			isa = PBXGroup;
 			children = (
+				67B4822B16B8DCAC00232244 /* ipad1bg@2x.png */,
+				67B4822016B8DC0C00232244 /* ipad2bg@2x.png */,
+				67B4822116B8DC0C00232244 /* ipad3bg@2x.png */,
+				67B4822216B8DC0C00232244 /* ipad4bg@2x.png */,
+				67B4822316B8DC0C00232244 /* ipad5bg@2x.png */,
+				67B4822416B8DC0C00232244 /* ipad6bg@2x.png */,
+				67B4821B16B8DA4C00232244 /* btnStart.png */,
+				67B4821C16B8DA4C00232244 /* btnStart@2x.png */,
 				293D6A6D158B2EAD00B459E1 /* blue.png */,
 				293D6A6E158B2EAD00B459E1 /* green.png */,
 				293D6A6F158B2EAD00B459E1 /* red.png */,
@@ -387,6 +411,14 @@
 				293D6A75158B2EAD00B459E1 /* white.png in Resources */,
 				293D6A76158B2EAD00B459E1 /* yellow.png in Resources */,
 				29809875158C596B00009524 /* Settings.bundle in Resources */,
+				67B4821D16B8DA4C00232244 /* btnStart.png in Resources */,
+				67B4821E16B8DA4C00232244 /* btnStart@2x.png in Resources */,
+				67B4822616B8DC0C00232244 /* ipad2bg@2x.png in Resources */,
+				67B4822716B8DC0C00232244 /* ipad3bg@2x.png in Resources */,
+				67B4822816B8DC0C00232244 /* ipad4bg@2x.png in Resources */,
+				67B4822916B8DC0C00232244 /* ipad5bg@2x.png in Resources */,
+				67B4822A16B8DC0C00232244 /* ipad6bg@2x.png in Resources */,
+				67B4822C16B8DCAC00232244 /* ipad1bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -84,6 +84,8 @@
 }
 
 - (IBAction)checkValue:(id)sender {
+    
+    
     if([lastname.text length] <= 0)
     {
         lastname.placeholder = @"Blank!";
@@ -93,13 +95,20 @@
         {
             firstname.placeholder = @"Blank!";
         }
-    }else if([firstname.text length] <= 0)
+    }
+    
+    /*
+    else if([firstname.text length] <= 0)
     {
         firstname.placeholder = @"Blank!";
         [firstname becomeFirstResponder];
         [self adjestBannerDown];
     }
-    if([firstname.text length] > 0 && [lastname.text length] > 0)
+     */
+
+    //if([firstname.text length] > 0 && [lastname.text length] > 0)
+
+    if([lastname.text length] > 0)
     {
         [self adjestBannerUp];
         lastname.placeholder = @"";
