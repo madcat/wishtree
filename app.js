@@ -196,6 +196,8 @@ app.post('/luck/:action',function(req,res){
       if (!err) {
         if (req.params.action == "stop") {
           io.sockets.emit('luck_stop',rows[0]);
+          
+          db.query("UPDATE  " + settings.db_table + " SET is_show = -1 WHERE id = " + req.body.id, null)
         } 
         // else if (req.params.action == "show") {
         //   io.sockets.emit('show_wish',rows[0]);
