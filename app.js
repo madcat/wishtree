@@ -213,11 +213,28 @@ app.post('/luck/:action',function(req,res){
 // PUT => UPDATE
 
 app.put('/wishes/:id',function(req,res){
-  db.query("UPDATE " + settings.db_table + 
-      " SET is_show = " + req.body.show + 
-      " WHERE id = " + req.params.id,function(err,result){
+    var sets = []
+    if(req.body.show) sets.push("is_show = " + req.body.show)
+    if(req.body.read) sets.push("is_read = " + req.body.read)
+    if(req.body.white) sets.push("is_white = " + req.body.white)
+    
+    if(sets.length<=0) {
+        res.json({'status': 'error','body':"missing param to update"});
+        return;
+    }
+    
+    var temp = ""
+    for(var i=0;i<sets.length; i++){
+        temp += sets[i] + ","
+    }
+    temp = temp.substr(0,temp.length-1)
+    
+    var q = "UPDATE " + settings.db_table + " SET " + temp +
+      " WHERE id = " + req.params.id
+      console.log(q)
+  db.query(q,function(err,result){
     if (!err) {
-      io.sockets.emit('show_change',{id:req.params.id,show:req.body.show});
+      io.sockets.emit('show_change',{id:req.params.id,show:req.body.show,read:req.body.read,white:req.body.white});
       res.json({'status': 'success', 'body': result});
     } else {
       console.log(err);

@@ -17,6 +17,7 @@
 
 @property (nonatomic,copy) NSMutableArray *normalList;
 @property (nonatomic,copy) NSMutableArray *whiteList;
+@property (nonatomic) int drawCount;
 
 -(NSNumber *)pickaWish:(NSArray *)aRange;
 -(NSString *)startDraw;

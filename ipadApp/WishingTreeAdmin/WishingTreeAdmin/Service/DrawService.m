@@ -88,7 +88,8 @@
         [newWhiteList addObject:newWhite];
     }
     whiteList = newWhiteList;
-
+    
+    self.drawCount = whiteList.count + normalList.count;
 }
 
 @end

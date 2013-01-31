@@ -34,6 +34,8 @@
             self.pic_path = ko.observable(wish.pic_path);
             self.wish_text = ko.observable(wish.wish_text);
             self.is_show = ko.observable(wish.is_show == 1);
+            self.is_read = ko.observable(wish.is_read == 1);
+            self.is_white = ko.observable(wish.is_white);
             // additional observables
             // functions
             self.alter_show = function(wish){
@@ -52,6 +54,35 @@
                 return false;
             };
             
+            self.alter_read = function(wish){
+                var read_status = wish.is_read()? 0: 1;
+                $.ajax({
+                    url: '/wishes/' + wish.id(),
+                    type: 'PUT',
+                    dataType: 'json',
+                    data: {read: read_status},
+                    success: function(json){
+                        if (json.status == "success") {
+                            self.is_read(!self.is_read());
+                        }
+                    }
+                });
+                return false;
+            };
+            
+            self.is_white.subscribe(function(new_white){
+                $.ajax({
+                    url: "/wishes/" + self.id(),
+                    type: 'PUT',
+                    dataType: 'json',
+                    data: {white: new_white},
+                    success: function(json){
+                        if (json.status == "success") {
+                            console.log("change white to: "+new_white)
+                        }
+                    }
+                });
+            })
         }
 
         // view modal
@@ -59,15 +90,15 @@
             var self = this;
             self.wishes = ko.observableArray([]);
 
-        // load all booths from server
-        $.getJSON("/wishes_all",function(json){
-            if (json.status == "success") {
-                var mapped_wishes = _.map(json.body,function(wish){
-                    return new GM_Wish(wish);
-                });
-                self.wishes(mapped_wishes);
-            }
-        });
+            // load all booths from server
+            $.getJSON("/wishes_all",function(json){
+                if (json.status == "success") {
+                    var mapped_wishes = _.map(json.body,function(wish){
+                        return new GM_Wish(wish);
+                    });
+                    self.wishes(mapped_wishes);
+                }
+            });
         }
 
         $(function(){
@@ -94,8 +125,12 @@
                 <td><span data-bind="text: last_name"></span></td>
                 <td><span data-bind="text: wish_text"></span></td>
                 <td><span>
-                    <a class='btn btn-success' href='#' data-bind='visible: is_show() != 1, click: alter_show'>显示</a>
-                    <a class='btn btn-warning' href='#' data-bind='visible: is_show() == 1, click: alter_show'>隐藏</a>
+                    <a class='btn btn-success' href='#' data-bind='visible: is_read() != 1, click: alter_read'>Show</a>
+                    <a class='btn btn-warning' href='#' data-bind='visible: is_read() == 1, click: alter_read'>Hide</a>
+                    <a class='btn btn-success' href='#' data-bind='visible: is_show() != 1, click: alter_show'>Shuffle On</a>
+                    <a class='btn btn-warning' href='#' data-bind='visible: is_show() == 1, click: alter_show'>Shuffle Off</a>
+                    <input type="text" data-bind="value: is_white, valueUpdate: 'afterkeydown'"></input>
+
                 </span></td>
             </tr>
         </tbody>

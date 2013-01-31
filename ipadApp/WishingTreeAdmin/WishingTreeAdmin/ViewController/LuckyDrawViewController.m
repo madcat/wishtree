@@ -46,7 +46,7 @@
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     drawCount = 0;
-    drawTimesLabel.text = @"Draw Times: 0/21";
+    
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"ipadnormalbg.png"]];
     self.view.backgroundColor = background;
     
@@ -54,6 +54,8 @@
     
     drawList = self.drawbrain.normalList;
     whiteList = self.drawbrain.whiteList;
+    
+    drawTimesLabel.text = [NSString stringWithFormat:@"Draw Times: 0/%d",_drawbrain.drawCount];
     
     [startButton setEnabled:YES];
     [stopButton setEnabled:NO];
@@ -77,7 +79,7 @@
 }
 
 - (IBAction)DrawAwish:(id)sender {
-    if(drawCount <= 21){
+    if(drawCount < _drawbrain.drawCount){
         if(!drawing)
         {
             //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"stop-normal.png"] forState:UIControlStateNormal];
@@ -90,7 +92,7 @@
         {
             drawing = false;
             drawCount ++;
-            drawTimesLabel.text = [NSString stringWithFormat:@"Draw Times: %d/21",drawCount];
+            drawTimesLabel.text = [NSString stringWithFormat:@"Draw Times: %d/%d",drawCount,_drawbrain.drawCount];
             //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateNormal];
             //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-click.png"] forState:UIControlStateHighlighted];
             //[drawSwitch setBackgroundImage:[UIImage imageNamed:@"start-normal.png"] forState:UIControlStateDisabled];
@@ -120,6 +122,11 @@
             }
         }
     }
+    else
+    {
+        [startButton setEnabled:NO];
+        [stopButton setEnabled:NO];
+    }
 }
 
 - (IBAction)startDraw:(id)sender {
@@ -129,10 +136,9 @@
 }
 
 - (IBAction)stopDraw:(id)sender {
-    if(drawCount <= 20)
-    {
+
         drawCount ++;
-        drawTimesLabel.text = [NSString stringWithFormat:@"Draw Times: %d/21",drawCount];
+        drawTimesLabel.text = [NSString stringWithFormat:@"Draw Times: %d/%d",drawCount,_drawbrain.drawCount];
         
         [startButton setEnabled:YES];
         [stopButton setEnabled:NO];
@@ -159,11 +165,11 @@
                 NSLog(@"failed");
             }
         }
-    }else
-    {
-        [startButton setEnabled:NO];
-        [stopButton setEnabled:NO];
-    }
+        
+        if(drawCount >= _drawbrain.drawCount){
+            [startButton setEnabled:NO];
+            [stopButton setEnabled:NO];
+        }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
