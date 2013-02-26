@@ -47,8 +47,6 @@
 		29776C9D1593122300EB42F9 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 29776C9C1593122300EB42F9 /* white.png */; };
 		29776CA01593202200EB42F9 /* WhiteListDraw.m in Sources */ = {isa = PBXBuildFile; fileRef = 29776C9F1593202200EB42F9 /* WhiteListDraw.m */; };
 		29809872158C574900009524 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29809871158C574900009524 /* Settings.bundle */; };
-		67B4822F16B8DE5B00232244 /* ipadnormalbg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B4822D16B8DE5B00232244 /* ipadnormalbg@2x.png */; };
-		67B4823016B8DE5B00232244 /* ipad1bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67B4822E16B8DE5B00232244 /* ipad1bg@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,8 +117,6 @@
 		29776C9E1593202200EB42F9 /* WhiteListDraw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WhiteListDraw.h; path = Model/WhiteListDraw.h; sourceTree = "<group>"; };
 		29776C9F1593202200EB42F9 /* WhiteListDraw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WhiteListDraw.m; path = Model/WhiteListDraw.m; sourceTree = "<group>"; };
 		29809871158C574900009524 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		67B4822D16B8DE5B00232244 /* ipadnormalbg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ipadnormalbg@2x.png"; path = "Pic/ipadnormalbg@2x.png"; sourceTree = "<group>"; };
-		67B4822E16B8DE5B00232244 /* ipad1bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ipad1bg@2x.png"; path = "Pic/ipad1bg@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,8 +169,6 @@
 		2922D9F31589F81100A5B0C9 /* pic */ = {
 			isa = PBXGroup;
 			children = (
-				67B4822D16B8DE5B00232244 /* ipadnormalbg@2x.png */,
-				67B4822E16B8DE5B00232244 /* ipad1bg@2x.png */,
 				291A349B1598D841007190E3 /* start-click-final.png */,
 				291A349C1598D841007190E3 /* start-disable-final.png */,
 				291A349D1598D841007190E3 /* start-normal-final.png */,
@@ -351,8 +345,6 @@
 				291A34A41598D841007190E3 /* stop-click-final.png in Resources */,
 				291A34A51598D841007190E3 /* stop-disable-final.png in Resources */,
 				291A34A61598D841007190E3 /* stop-normal-final.png in Resources */,
-				67B4822F16B8DE5B00232244 /* ipadnormalbg@2x.png in Resources */,
-				67B4823016B8DE5B00232244 /* ipad1bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
