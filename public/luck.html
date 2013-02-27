@@ -28,13 +28,14 @@
                 position: absolute;
                 left:0px;
                 top:0px;
-                width:1024px;
-                height:768px;
+                width:1004px;
+                height:748px;
                 display:block;
             }
             .light {
                 position: absolute;
                 opacity: 0;
+                overflow: hidden;
             }
             #text_canvas {
             	display: none;
@@ -48,13 +49,13 @@
             </div>
             <div id="light" class="layer"></div>
             <div id="tree" class="layer">
-                <img src="img/tree.png" width="1024" height="768" />
+                <img src="img/tree.png" width="1004" height="748" />
             </div>
         </div>
 	 
-	  	<div id="random" class="layer" width="1024" height="768" ></div>
-	  	<div id="lucky" class="layer" width="1024" height="768" ></div>
-	  	<div id="show" class="layer" width="1024" height="768" ></div>
+	  	<div id="random" class="layer" width="1004" height="748" ></div>
+	  	<div id="lucky" class="layer" width="1004" height="748" ></div>
+	  	<div id="show" class="layer" width="1004" height="748" ></div>
 
 	  	<canvas id="text_canvas" width="160" height="115"></canvas>
 	    <div id="fps" class="layer"></div>
@@ -404,7 +405,7 @@
 	    	$(document).ready(function(){
 
 			    // background animation
-			    var width = 1024, height = 768;
+			    var width = 1004, height = 748;
 			    var grid = [
 			        0,2,0,1,3,4,3,1,0,2,3,1,1,4,3,2,1,2,3,2,1,3,2,1,4,0,0,2,2,4,4,2,
 			        2,2,1,3,4,3,1,0,2,3,1,1,4,3,2,1,2,3,4,1,3,2,1,4,0,0,2,1,1,4,0,2,
@@ -443,8 +444,10 @@
 			    var cellWidth = 24;
 			    var lightWidth = 30;
 			    var ligthOffSet = Math.floor((cellWidth - lightWidth)/2);
-			    var ncol = Math.floor(Math.sqrt(grid.length));
-			    var nrow = Math.floor(Math.sqrt(grid.length));
+			    //var ncol = Math.floor(Math.sqrt(grid.length));
+			    //var nrow = Math.floor(Math.sqrt(grid.length));
+			    var ncol = Math.floor(width/cellWidth);
+			    var nrow = Math.floor(height/cellWidth);
 			    var colors = ['#ffffff', '#e0002a', '#43b133', '#0cacdb', '#ffe807'];
 			    var randomness = [0,1,1,2,2,3,3,3,4]; // chance of each color
 			    var lightSpeed = 16; // lights per lightFrame interval
