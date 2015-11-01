@@ -8,7 +8,7 @@ var express = require('express'),
   path = require('path'),
   us = require('underscore');
 
-  
+
 var log_file = fs.createWriteStream('./wishlist.log',{flags: 'a'});
 var app = module.exports = express.createServer();
 var io = require('socket.io').listen(app);
@@ -34,7 +34,8 @@ app.configure('production', function(){
 // ============ Routes For API ==================
 
 var db = mysql.createConnection({
-  host: settings.db_host,
+  host: settings.db_addr,
+  port: settings.db_port,
   user: settings.db_login,
   password: settings.db_pass
 });
@@ -149,7 +150,7 @@ app.post('/wishes',function(req,res){
     }
     fs.rename(req.files.pic_data.path, full_name,function(err){
       if (!err) {
-        db.query("INSERT INTO " + settings.db_table + 
+        db.query("INSERT INTO " + settings.db_table +
           "(first_name,last_name,pic_path,wish_text) " +
           " VALUES('" + req.body.fn  + "','" + req.body.ln + "','" +
           node_path + "','" + req.body.text.replace("'","\\'") + "')",function(err,result){
@@ -171,7 +172,7 @@ app.post('/wishes',function(req,res){
         });
       } else {
         res.json({'status': 'error','body': err});
-      } 
+      }
     });
   });
 });
@@ -196,9 +197,9 @@ app.post('/luck/:action',function(req,res){
       if (!err) {
         if (req.params.action == "stop") {
           io.sockets.emit('luck_stop',rows[0]);
-          
+
           db.query("UPDATE  " + settings.db_table + " SET is_show = -1 WHERE id = " + req.body.id, null)
-        } 
+        }
         // else if (req.params.action == "show") {
         //   io.sockets.emit('show_wish',rows[0]);
         // }
@@ -219,18 +220,18 @@ app.put('/wishes/:id',function(req,res){
     if(req.body.show) sets.push("is_show = " + req.body.show)
     if(req.body.read) sets.push("is_read = " + req.body.read)
     if(req.body.white) sets.push("is_white = " + req.body.white)
-    
+
     if(sets.length<=0) {
         res.json({'status': 'error','body':"missing param to update"});
         return;
     }
-    
+
     var temp = ""
     for(var i=0;i<sets.length; i++){
         temp += sets[i] + ","
     }
     temp = temp.substr(0,temp.length-1)
-    
+
     var q = "UPDATE " + settings.db_table + " SET " + temp +
       " WHERE id = " + req.params.id
       console.log(q)
@@ -246,5 +247,5 @@ app.put('/wishes/:id',function(req,res){
 });
 
 // =================== PORT ===============
-app.listen(3000);
+app.listen(5000);
 

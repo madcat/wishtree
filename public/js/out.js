@@ -158,7 +158,7 @@ function WishAnim(paper,wish,index,wish_type) {
 
     // random scale from 0.6 to 0.8
     this.scale = this.param.scale;//Math.ceil(5 + Math.random() * 3) / 10;
-    var real_w = Math.floor(CARD_W * this.scale); 
+    var real_w = Math.floor(CARD_W * this.scale);
         real_h = Math.floor(CARD_H * this.scale);
     if (this.param.orientation == 'left') {
         this.card_x = Math.floor(this.param.path_end_x - real_w) + 20;
@@ -175,7 +175,7 @@ WishAnim.prototype.animate_wish = function() {
         add_obj('local_wish',this.wish);
     }
     animating_idx_arr.push(this.idx);
-    
+
     // generate wish card
     var text_img = get_text_img(this.wish.first_name + "  " + this.wish.last_name, this.wish.wish_text,this.param.font_color);
     this.card.push(
@@ -191,7 +191,7 @@ WishAnim.prototype.animate_wish = function() {
     // animation paths
     this.shadow_anim.attr({stroke: "#333", 'stroke-linejoin': "round", 'stroke-width': 9, 'stroke-opacity': 0.3});
     this.path_anim.attr({stroke: this.param.line_color, 'stroke-linejoin': "round", 'stroke-width': 9});
-   
+
     var self = this;
     var path_attr = "ca" + this.idx,
         shadow_attr = "cas" + this.idx;
@@ -218,7 +218,7 @@ WishAnim.prototype.animate_wish = function() {
     // animations
     this.path_anim.animate(attr_obj3,4e3, "backIn");
     this.shadow_anim.animate(attr_obj4,4e3, "backIn",function(){
-       self.card.animate({transform: 's' + self.scale + ',' + self.scale + ','  + self.card_x + ',' + self.card_y + 't0,0', opacity:1},2e3);//,"backOut"); 
+       self.card.animate({transform: 's' + self.scale + ',' + self.scale + ','  + self.card_x + ',' + self.card_y + 't0,0', opacity:1},2e3);//,"backOut");
     });
     setTimeout(function(){
         animating_idx_arr.shift();
@@ -319,7 +319,7 @@ $(document).ready(function(){
     }
 
     // socket io
-    var socket = io.connect('http://localhost:3000');
+    var socket = io.connect('http://61.153.100.130:5000');
     socket.on('new_wish', function (data) {
         data.is_animate = false;
         add_obj('incoming_wish',data);
@@ -374,10 +374,10 @@ $(document).ready(function(){
     var colors = ['#ffffff', '#e0002a', '#43b133', '#0cacdb', '#ffe807'];
     var randomness = [0,1,1,2,2,3,3,3,4]; // chance of each color
     var lightSpeed = 16; // lights per lightFrame interval
-    var lightFrame = 24; // 
+    var lightFrame = 24; //
     var lightFadeTime = 2e3;
     var drawInterval = 16.666666;
-    
+
     var backc = document.createElement('canvas');
     backc.width = width;
     backc.height = height;
@@ -415,10 +415,10 @@ $(document).ready(function(){
             var irow = 5 + Math.floor(Math.random() * 20);
             var icol = 11 + Math.floor(Math.random() * 20);
             var img = lightGrid[irow * ncol + icol];
-            
+
             // transit anim
             img.transit({opacity:1}, lightFadeTime/2, "out").transit({opacity:0, delay:1e3}, lightFadeTime/2, "in", function(){});
-            
+
         }
 
         setTimeout(drawLight, lightFrame * drawInterval);
@@ -447,7 +447,7 @@ $(document).ready(function(){
 
         frameCount++;
 
-        if(!stop) requestAnimationFrame(render_fps) 
+        if(!stop) requestAnimationFrame(render_fps)
     }
     requestAnimationFrame(render_fps);
 

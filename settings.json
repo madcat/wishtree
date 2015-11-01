@@ -1,10 +1,10 @@
 {
-	"db_addr": "localhost",
-	"db_port": "3306",
-	"db_name": "wishtree",
+	"db_addr": "560f33a30c4cb.sh.cdb.myqcloud.com",
+	"db_port": "6322",
+	"db_name": "wishtreeyz",
 	"db_table": "wishlist",
 	"db_login": "root",
-	"db_pass": "a123123",
+	"db_pass": "zealioniPLUS!",
 	"pic_path": "user_images",
 	"key": "123"
 }
