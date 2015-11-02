@@ -52,7 +52,7 @@
                 <img src="img/tree.png" width="1004" height="748" />
             </div>
         </div>
-	 
+
 	  	<div id="random" class="layer" width="1004" height="748" ></div>
 	  	<div id="lucky" class="layer" width="1004" height="748" ></div>
 	  	<div id="show" class="layer" width="1004" height="748" ></div>
@@ -64,7 +64,7 @@
 	    	var interval;
 	  		var wishes;
 
-	  		// generate card 
+	  		// generate card
 
 	  		// wrap text in canvas
 			function wrapText(context, text, x, y, maxWidth, lineHeight, isChinese) {
@@ -115,7 +115,7 @@
 			    return c.toDataURL("image/png");
 			}
 
-			// get card image 
+			// get card image
 			function transform_to_card(paper,wish,cx,cy,cscale) {
 
 				var idx = Math.floor(Math.random() * 5);
@@ -164,7 +164,7 @@
 				global_paper = paper;
 			    // shuffle
 			    wishes = _.shuffle(wishes);
-			    
+
 			    interval = setInterval(function(){
 			    	if ($("#random svg image").length > 80) {
 			    		$("#random svg image:lt(21)").remove();
@@ -176,7 +176,7 @@
 		    		transform_to_card(paper,wishes[idx],x,y,s);
 			    },100);
 	  		}
-				
+
 
 			//lucky stop
     		function winning_card(wish) {
@@ -208,8 +208,8 @@
 		        		'100%': {transform: 's1.8,1.8,' + scale_x + ',' + scale_y},
 		        	},1000);
 				},600);
-	        	
-	        	
+
+
 	  		}
 
 	  		// wish animation
@@ -302,7 +302,7 @@
 			        line_color: "#e0002a",
 			        bg_img: "img/red.png",
 			        bias: "-50,0"
-			    }           
+			    }
 			];
 
 			// class for wish animation
@@ -320,7 +320,7 @@
 
 			    // random scale from 0.7 to 1.0
 			    this.scale = 1.5;//Math.ceil(6 + Math.random() * 4) / 10;
-			    var real_w = Math.floor(CARD_W * this.scale); 
+			    var real_w = Math.floor(CARD_W * this.scale);
 			        real_h = Math.floor(CARD_H * this.scale);
 			    if (this.param.orientation == 'left') {
 			        this.card_x = Math.floor(this.param.path_end_x - real_w) + 20;
@@ -331,7 +331,7 @@
 			    }
 			}
 
-			WishAnim.prototype.animate_wish = function() {			    
+			WishAnim.prototype.animate_wish = function() {
 			    // generate wish card
 			    var text_img = get_text_img(this.wish.first_name + "  " + this.wish.last_name, this.wish.wish_text,this.param.font_color);
 			    this.card.push(
@@ -347,7 +347,7 @@
 			    // animation paths
 			    this.shadow_anim.attr({stroke: "#333", 'stroke-linejoin': "round", 'stroke-width': 9, 'stroke-opacity': 0.3});
 			    this.path_anim.attr({stroke: this.param.line_color, 'stroke-linejoin': "round", 'stroke-width': 9});
-			   
+
 			    var self = this;
 			    var path_attr = "ca" + this.idx,
 			        shadow_attr = "cas" + this.idx;
@@ -390,7 +390,7 @@
 			    //         });
 			    //     });
 			    // },20000);
-				
+
 			}
 
 			// back to normal
@@ -451,10 +451,10 @@
 			    var colors = ['#ffffff', '#e0002a', '#43b133', '#0cacdb', '#ffe807'];
 			    var randomness = [0,1,1,2,2,3,3,3,4]; // chance of each color
 			    var lightSpeed = 16; // lights per lightFrame interval
-			    var lightFrame = 24; // 
+			    var lightFrame = 24; //
 			    var lightFadeTime = 2e3;
 			    var drawInterval = 16.666666;
-			    
+
 			    var backc = document.createElement('canvas');
 			    backc.width = width;
 			    backc.height = height;
@@ -492,10 +492,10 @@
 			            var irow = 5 + Math.floor(Math.random() * 20);
 			            var icol = 11 + Math.floor(Math.random() * 20);
 			            var img = lightGrid[irow * ncol + icol];
-			            
+
 			            // transit anim
 			            img.transit({opacity:1}, lightFadeTime/2, "out").transit({opacity:0, delay:1e3}, lightFadeTime/2, "in", function(){});
-			            
+
 			        }
 
 			        setTimeout(drawLight, lightFrame * drawInterval);
@@ -524,14 +524,14 @@
 
 			        frameCount++;
 
-			        if(!stop) requestAnimationFrame(render_fps) 
+			        if(!stop) requestAnimationFrame(render_fps)
 			    }
 			    requestAnimationFrame(render_fps);
 
 				//lucky run
 				$.ajax({
 					type: 'GET',
-					url: "http://localhost:3000/wishes",
+					url: "http://61.153.100.130:5000/wishes",
 					dataType: 'json',
 					success: function(json) {
 						if (json.status == "success") {
@@ -553,8 +553,8 @@
 			        path_map['shadow' + i] = shadow.id;
 			    }
 
-				//socket 
-				var socket = io.connect('http://localhost:3000');
+				//socket
+				var socket = io.connect('http://61.153.100.130:5000');
 			    socket.on('luck_start', function (data) {
 			    	refresh();
 			    	random_card();
@@ -575,7 +575,7 @@
 
 
 		  	});
-	
+
 		</script>
 	</body>
 </html>
