@@ -5,11 +5,12 @@ grid.controller = function(){
   c.getGuests = function(){
     m.request({method:"GET", url:"/wishes"}).then(function(data){
       c.guests(data.body)
-      c.guests().push.apply(c.guests(), c.guests())
-      c.guests().push.apply(c.guests(), c.guests())
-      c.guests().push.apply(c.guests(), c.guests())
-      c.guests().push.apply(c.guests(), c.guests())
-      c.guests().push.apply(c.guests(), c.guests())
+      var n = 374 - c.guests().length
+      if (n > 0){
+        for(i=0;i<n;i++){
+          c.guests().push(c.guests()[Math.floor(Math.random()*c.guests().length)])
+        }
+      }
     })
   }
   c.getGuests()
