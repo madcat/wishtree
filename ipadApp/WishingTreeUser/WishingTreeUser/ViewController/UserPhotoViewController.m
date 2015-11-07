@@ -232,10 +232,10 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if([segue.identifier isEqualToString:@"next2UserWish"])
+    if([segue.identifier isEqualToString:@"next2UserConfirm"])
     {
         [self.userInfo setUserPhotoDir:[self.service saveUserPhoto:[self.service scaleAndRotateImage:photoImageView.image]]];
-        [self.userInfo setWishwords:@""];
+        //[self.userInfo setWishwords:@""];
     }
 }
 

@@ -11,10 +11,14 @@
 
 @interface UserNameViewController ()
 @property (nonatomic,strong) UserInfo *userInfo;
+@property (nonatomic,strong) NSArray *groups;
+@property (nonatomic, retain) UIPickerView *picker;
 @end
 
 @implementation UserNameViewController
+@synthesize picker;
 @synthesize userInfo;
+@synthesize groups;
 
 - (UserInfo *)userInfo
 {
@@ -27,6 +31,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        
     }
     return self;
 }
@@ -37,6 +43,7 @@
     [self.navigationController setNavigationBarHidden:YES animated:NO];
     UIColor *background = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"ipad2bg.png"]];
     self.view.backgroundColor = background;
+    self.groups = @[@"江苏",@"四川",@"浙江",@"上元",@"武汉",@"青岛",@"河南",@"江西",@"长沙",@"辽宁",@"广西",@"福建",@"广州",@"石家庄",@"京津",@"台元",@"梦果子",@"总部"];
     
     firstname.placeholder = @"";
     firstname.text = [self.userInfo getFirstname];
@@ -45,6 +52,12 @@
     
     [lastname becomeFirstResponder];
     [self adjestBannerUp];
+    
+    picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 50, 100, 150)];
+    [picker setDataSource: self];
+    [picker setDelegate: self];
+    picker.showsSelectionIndicator = YES;
+    group.inputView = picker;
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(upingButton:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(downingButton:) name:UIKeyboardWillHideNotification object:nil];
@@ -149,6 +162,30 @@
     backButton.frame = CGRectMake(73, 901, 140, 55);
     nextButton.frame = CGRectMake(555, 901, 140, 55);
     btnBanner.frame = CGRectMake(0, 901, 768, 59);
+}
+
+
+// returns the number of 'columns' to display.
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+// returns the # of rows in each component..
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return self.groups.count;
+}
+
+- (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return self.groups[row];
+}
+
+- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    [self.userInfo setWishwords:self.groups[row]];
+    group.text = self.groups[row];
+
 }
 
 @end

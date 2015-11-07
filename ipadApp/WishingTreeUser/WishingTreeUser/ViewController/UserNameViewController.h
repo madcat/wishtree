@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserNameViewController : UIViewController <UIImagePickerControllerDelegate>
+@interface UserNameViewController : UIViewController <UIImagePickerControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 {
     IBOutlet UITextField *lastname;
+    IBOutlet UITextField *group;
     IBOutlet UITextField *firstname;
     IBOutlet UIButton *backButton;
     IBOutlet UIButton *nextButton;
