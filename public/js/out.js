@@ -177,7 +177,8 @@ WishAnim.prototype.animate_wish = function() {
     animating_idx_arr.push(this.idx);
 
     // generate wish card
-    var text_img = get_text_img(this.wish.first_name + "  " + this.wish.last_name, this.wish.wish_text,this.param.font_color);
+    var name = this.wish.first_name.length == 0 ? this.wish.last_name : this.wish.first_name + "  " + this.wish.last_name;
+    var text_img = get_text_img(name, this.wish.wish_text,this.param.font_color);
     this.card.push(
         this.paper.image(this.param.bg_img,this.card_x,this.card_y,CARD_W,CARD_H),
         this.paper.image(this.wish.pic_path,this.card_x+15,this.card_y+50,PHOTO_W,PHOTO_H),

@@ -101,15 +101,21 @@
     
     if([lastname.text length] <= 0)
     {
-        lastname.placeholder = @"Blank!";
+        lastname.placeholder = @"请填写姓名";
         [lastname becomeFirstResponder];
         [self adjestBannerDown];
         if([firstname.text length] <= 0)
         {
-            firstname.placeholder = @"Blank!";
+            firstname.placeholder = @"请填写姓名";
         }
     }
     
+    if([group.text length] <= 0)
+    {
+        group.placeholder = @"请选择分公司";
+        [group becomeFirstResponder];
+        [self adjestBannerDown];
+    }
     /*
     else if([firstname.text length] <= 0)
     {
@@ -121,7 +127,7 @@
 
     //if([firstname.text length] > 0 && [lastname.text length] > 0)
 
-    if([lastname.text length] > 0)
+    if([lastname.text length] > 0 && [group.text length] >= 0)
     {
         [self adjestBannerUp];
         lastname.placeholder = @"";

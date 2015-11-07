@@ -61,6 +61,9 @@
     NSString *userFirstname = [self.userInfo getFirstname];
     NSString *userLastname = [self.userInfo getLastname];
     NSString *userFullName = [NSString stringWithFormat:@"%@  %@",userFirstname,userLastname];
+    if (userFirstname.length==0){
+        userFullName = [NSString stringWithFormat:@"%@",userLastname];
+    }
     for(int i=0; i < userFirstname.length; ++i)
     {
         NSRange range = NSMakeRange(i, 1);
