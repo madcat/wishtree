@@ -5,6 +5,11 @@ grid.controller = function(){
   c.getGuests = function(){
     m.request({method:"GET", url:"/wishes"}).then(function(data){
       c.guests(data.body)
+      c.guests().push.apply(c.guests(), c.guests())
+      c.guests().push.apply(c.guests(), c.guests())
+      c.guests().push.apply(c.guests(), c.guests())
+      c.guests().push.apply(c.guests(), c.guests())
+      c.guests().push.apply(c.guests(), c.guests())
     })
   }
   c.getGuests()
