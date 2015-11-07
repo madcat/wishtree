@@ -5,7 +5,7 @@ grid.controller = function(){
   c.getGuests = function(){
     m.request({method:"GET", url:"/wishes"}).then(function(data){
       c.guests(data.body)
-      var n = 374 - c.guests().length
+      var n = 376 - c.guests().length
       if (n > 0){
         for(i=0;i<n;i++){
           c.guests().push(c.guests()[Math.floor(Math.random()*c.guests().length)])
