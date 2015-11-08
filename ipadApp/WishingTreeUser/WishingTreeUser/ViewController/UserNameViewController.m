@@ -127,7 +127,7 @@
 
     //if([firstname.text length] > 0 && [lastname.text length] > 0)
 
-    if([lastname.text length] > 0 && [group.text length] >= 0)
+    if([lastname.text length] > 0 && [group.text length] > 0)
     {
         [self adjestBannerUp];
         lastname.placeholder = @"";

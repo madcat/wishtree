@@ -4,6 +4,9 @@ grid.controller = function(){
   c.guests = m.prop([])
   c.getGuests = function(){
     m.request({method:"GET", url:"/wishes"}).then(function(data){
+      if (data.length==0) {
+        return
+      }
       c.guests(data.body)
       var n = 376 - c.guests().length
       if (n > 0){
