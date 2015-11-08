@@ -8,7 +8,7 @@ grid.controller = function(){
         return
       }
       c.guests(data.body)
-      var n = 376 - c.guests().length
+      var n = 390 - c.guests().length
       if (n > 0){
         for(i=0;i<n;i++){
           c.guests().push(c.guests()[Math.floor(Math.random()*c.guests().length)])
